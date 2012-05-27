@@ -1,6 +1,6 @@
-// Week 4, Project 4
+// Week 1, Project 1
 // David Tyler Kneisly
-// VFW 1205
+// MUI 1206
 // Book Tracker
 
 // Wait until the DOM is ready
@@ -62,7 +62,7 @@ window.addEventListener('DOMContentLoaded', function() {
 				$('bookForm').style.display = "block";
 				$('clear').style.display = "inline";
 				$('addNew').style.display = "none";
-				$('items').style.display = "none";
+				$('item').style.display = "none";
 				break;
 			default:
 				return false;

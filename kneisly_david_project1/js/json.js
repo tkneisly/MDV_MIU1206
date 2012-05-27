@@ -1,6 +1,6 @@
-// Week 4, Project 4
+// Week 1, Project 1
 // David Tyler Kneisly
-// VFW 1205
+// MUI 1206
 // Book Tracker (JSON.js)
 
 var json = {

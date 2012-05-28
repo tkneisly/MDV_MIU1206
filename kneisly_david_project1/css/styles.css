@@ -63,6 +63,12 @@ a:hover {
     outline: none;
     color: black;
 }
+a#h1a {
+    text-decoration: none;
+}
+span {
+    text-decoration: none;
+}
 #clear {
     margin: 0 0 0 -10px;
 }

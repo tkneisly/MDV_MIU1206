@@ -21,7 +21,7 @@
 	<!-- Document Body -->
 	<body>
 		<header>
-			<h1>Book Tracker</h1>
+			<h1><a href="additem.html" id="h1a">Book Tracker</a></h1>
 		</header>
 		<nav>
 			<a href="#" id="clear">Clear All Saved Books</a>
@@ -29,7 +29,7 @@
 			<a href="additem.html" id="addNew" style="display:none;">Add New Item</a>
 		</nav>
 		<!-- Start of the Form -->
-		<form action"#" method="post" id="bookForm" onsubmit="return false" oninput="level.value = rlevel.valueAsNumber">
+		<form action"#" method="post" id="bookForm" onsubmit="return false" oninput="level.value = rlevel.valueAsNumber" >
 			<fieldset class="fieldSet" id="book_form">
 				<legend>Add a Book</legend>
 				<span class="required_notification">* fields are required.</span>
@@ -40,8 +40,8 @@
 					<li><label for="author">*Author:</label><input type="text" id="author" placeholder="Last Name, First Name" required /></li>
 					<li><label for="pages">*Pages:</label><input type="number" id="pages" placeholder="180" /></li>
 					<li><label for="date">*Date Finished:</label><input type="date" id="date" /></li></br>
-					<li><label for="rating">How fun was the book?<output for="rating" name="level">5</output></label>
-						<input name="rlevel" id="rating" type="range"  min="0" max="10" value="5" /></li></br>
+					<li><label for="rating">How fun was the book?<output for="rating" name="level" id="level">5</output></label>
+						<input name="rlevel" id="rating" type="range"  min="0" max="10" value="level.value" /></li></br>
   					<li><label for="genre">What was the genre?</label>
 						<ul class="checkbox">
 							<li><input type="radio" id="scifi" value="Science-Fiction" name="genre" /><label for="scifi">Science-Fiction</label></li>

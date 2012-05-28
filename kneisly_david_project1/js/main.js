@@ -61,8 +61,9 @@ window.addEventListener('DOMContentLoaded', function() {
 			case 'off':
 				$('bookForm').style.display = "block";
 				$('clear').style.display = "inline";
+				$('display').style.display = "inline";
 				$('addNew').style.display = "none";
-				$('item').style.display = "none";
+				$('items').style.display = "none";
 				break;
 			default:
 				return false;
@@ -97,6 +98,8 @@ window.addEventListener('DOMContentLoaded', function() {
 		localStorage.setItem(id, JSON.stringify(item));
 		// Data is saved into Local Storage; Using 'Stringify' to convert the object into a string
 		alert('Book is saved!');
+		window.location.reload();
+		return false;
 	}
 
 	// Show Data
@@ -201,7 +204,8 @@ window.addEventListener('DOMContentLoaded', function() {
 		$('author').value = item.authors[1];
 		$('pages').value = item.readpages[1];
 		$('date').value = item.datefinished[1];
-		$('rating').value = item.rating[1]; 
+		$('level').value = item.rating[1];
+		$('rating').value = item.rating[1];
 		var radios = document.forms[0].genre;
 		for (var i=0; i < radios.length; i++) {
 			if (radios[i].value == "Science-Fiction" && item.category[1] == "Science-Fiction") {
@@ -344,9 +348,9 @@ window.addEventListener('DOMContentLoaded', function() {
 	var 
 	bookGroups = ["--Choose a Source--", "Book", "EReader", "Tablet", "Online"],
 	genreValue,
-	level,
 	favoriteValue = "No",
-	errMsg = $('errors')
+	errMsg = $('errors'),
+	level
 	;
 	
 	makeCats();

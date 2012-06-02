@@ -203,6 +203,12 @@ div#items ul {
     line-height: 22px;
     list-style-type: none;
 }
+div#searchstack {
+    position: relative;
+    width: 93%;
+    padding: 12px 5px 8px 5px;
+    margin: 0px 5px 10px 5px;
+}
 output {
     position: relative;
     background-image: -webkit-gradient(linear, left top, left bottom, from (#444444), to (#999999));
@@ -252,7 +258,7 @@ ul#errors {
     line-height: 30px;
     color: #1c1601;
 }
-input[type="submit"] {
+input[id="submit"] {
     display: block;
     margin-top: 10px;
     margin-bottom: 20px;
@@ -266,14 +272,13 @@ input[type="submit"] {
     font-weight: bold;
     text-align: center;
     text-shadow: 1px 1px 1px #fff;
-
-    /*display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    font-family: Arial;
-    font-size: 13px;
-    margin-bottom: 20px;
-    width: 195px;
-    height: 30px;*/
+}
+input[type="search"] {
+    height: 25px;
+    width: 210px;
+    padding: 5px 8px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    box-shadow: 0 0 3px #ccc, 0 10px 15px #eee inset;
+    vertical-align: text-top;
 }

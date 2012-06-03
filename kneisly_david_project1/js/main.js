@@ -54,14 +54,14 @@ window.addEventListener('DOMContentLoaded', function() {
 		switch(n) {
 			case 'on':
 				$('bookForm').style.display = "none";
-				$('clear').style.display = "inline";
+				$('clear').style.display = "block";
 				$('display').style.display = "none";
-				$('addNew').style.display = "inline";
+				$('addNew').style.display = "block";
 				break;
 			case 'off':
 				$('bookForm').style.display = "block";
-				$('clear').style.display = "inline";
-				$('display').style.display = "inline";
+				$('clear').style.display = "block";
+				$('display').style.display = "block";
 				$('addNew').style.display = "none";
 				$('items').style.display = "none";
 				break;
@@ -221,7 +221,6 @@ window.addEventListener('DOMContentLoaded', function() {
 			} else if (radios[i].value == "Non-Fiction" && item.category[1] == "Non-Fiction") {
 				radios[i].setAttribute('checked', 'checked');
 			}
-
 		}
 		if (item.favs[1] == "Yes") {
 			$('favorite').setAttribute('checked', 'checked');
@@ -362,7 +361,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	// The saveBook variable now it instructs the validate function to be triggered first.
 	var saveBook = $('submit');
 	saveBook.addEventListener('click', validate);
-	// Hides the address bar when page loads.
+	//Hides the address bar when page loads.
 	var hideAddress = window.scrollTo(0,0);
 	window.addEventListener('load', hideAddress);
 });

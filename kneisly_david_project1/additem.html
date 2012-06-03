@@ -14,19 +14,24 @@
 		<meta name="viewport" content="target-densitydpi=device-dpi" />
 		<meta name="HandHeldFriendly" content="True" />
 		<meta name="MobileOptimized" content="320" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="author" content="David Tyler Kneisly" />
 		<title>David Kneisly:  Book Tracker</title>
 		<link href="css/styles.css" rel="stylesheet" type="text/css" />
 	</head>
 	<!-- Document Body -->
 	<body>
+		<div id="fixedribbon">
+			<span class="ribbon2"><img src="images/ribbon.png" /></span>
+		</div>
 		<header>
-			<h1><a href="additem.html" id="h1a">Book Tracker</a></h1>
+			<h1><a href="index.html" id="h1a">Book Tracker</a></h1>
 		</header>
 		<nav>
 			<a href="#" id="clear">Clear All Saved Books</a>
 			<a href="#" id="display">Display All Books</a>
 			<a href="additem.html" id="addNew" style="display:none;">Add New Item</a>
+			<a href ="additem.html"><img id="logo" src="images/logo.png" /></a>
 		</nav>
 		<!-- Start of the Form -->
 		<form action"#" method="post" id="bookForm" onsubmit="return false" oninput="level.value = rlevel.valueAsNumber" >

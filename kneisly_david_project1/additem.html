@@ -14,59 +14,64 @@
 		<meta name="viewport" content="target-densitydpi=device-dpi" />
 		<meta name="HandHeldFriendly" content="True" />
 		<meta name="MobileOptimized" content="320" />
-		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="author" content="David Tyler Kneisly" />
 		<title>David Kneisly:  Book Tracker</title>
 		<link href="css/styles.css" rel="stylesheet" type="text/css" />
 	</head>
 	<!-- Document Body -->
 	<body>
-		<div id="fixedribbon">
-			<span class="ribbon2"><img src="images/ribbon.png" /></span>
-		</div>
-		<header>
-			<h1><a href="index.html" id="h1a">Book Tracker</a></h1>
-		</header>
-		<nav>
-			<a href="#" id="clear">Clear All Saved Books</a>
-			<a href="#" id="display">Display All Books</a>
-			<a href="additem.html" id="addNew" style="display:none;">Add New Item</a>
-			<a href ="additem.html"><img id="logo" src="images/logo.png" /></a>
-		</nav>
-		<!-- Start of the Form -->
-		<form action"#" method="post" id="bookForm" onsubmit="return false" oninput="level.value = rlevel.valueAsNumber" >
-			<fieldset class="fieldSet" id="book_form">
-				<legend>Add a Book</legend>
-				<span class="required_notification">* fields are required.</span>
-				<ul id="errors"></ul>
-				<ul id="formQs">
-					<li id="select"><label for="group">*Add Source:</label></li>
-					<li><label for="booktitle">*Title:</label><input type="text" id="booktitle" placeholder="The Great Gatsby" required /></li>
-					<li><label for="author">*Author:</label><input type="text" id="author" placeholder="Last Name, First Name" required /></li>
-					<li><label for="pages">*Pages:</label><input type="number" id="pages" placeholder="180" /></li>
-					<li><label for="date">*Date Finished:</label><input type="date" id="date" /></li></br>
-					<li><label for="rating">How fun was the book?<output for="rating" name="level" id="level">5</output></label>
-						<input name="rlevel" id="rating" type="range"  min="0" max="10" value="level.value" /></li></br>
-  					<li><label for="genre">What was the genre?</label>
-						<ul class="checkbox">
-							<li><input type="radio" id="scifi" value="Science-Fiction" name="genre" /><label for="scifi">Science-Fiction</label></li>
-							<li><input type="radio" id="fantasy" value="Fantasy" name="genre" /><label for="fantasy">Fantasy</label></li>
-							<li><input type="radio" id="thriller" value="Thriller" name="genre" /><label for="thriller">Thriller</label></li>
-							<li><input type="radio" id="classic" value="Classic" name="genre" /><label for="classic">Classic</label></li>
-							<li><input type="radio" id="periodical" value="Periodical" name="genre" /><label for ="periodical">Periodical</label></li>
-							<li><input type="radio" id="nonfiction" value="Non-Fiction" name="genre" /><label for="nonfiction">Non-Fiction</label></li>
-						</ul>
-					</li></br><!-- User can pick one radio button to express the genre of their book. -->
-					<li><label for="favQ">Add to your favorites?</label>
-						<ul class ="checkbox">
-							<li><input type="checkbox" id="favorite" value="Yes" /><label for="favorite">Loved it!</label></li>
-						</ul>
-					</li> <!-- This checkbox will mark this book as a favorite -->
-					<li><label for="notes">Notes:</label><textarea id="notes" placeholder="Text Here" /></textarea></li>
-				</ul>
-			</fieldset>
-			<input class="submit" type="submit" value="Save your book!" id="submit" />
-		</form>
+		<section class="header">
+			<div id="fixedribbon">
+				<span class="ribbon"><img src="images/ribbon.png" /></span>
+			</div>
+			<header>
+				<a href="index.html"><h1>Book Tracker</h1></a>
+			</header>
+		</section>
+		<section class="cta">
+			<nav>
+				<a href="#" id="display">Display All Books</a>
+				<a href="#" id="addNew" style="display:none;">Add New Item</a>
+				<a href="#" id="clear">Clear All Saved Books</a>
+				<a href ="additem.html"><img id="logo" src="images/logo.png" /></a>
+			</nav>
+		</section>
+		<section class="content" id="content">
+			<!-- Start of the Form -->
+			<form action"#" method="post" id="bookForm" onsubmit="return false" oninput="level.value = rlevel.valueAsNumber" >
+				<fieldset class="fieldSet" id="book_form">
+					<legend>Add a Book</legend>
+					<p class="required_notification" id="notification">* fields are required.</p>
+					<ul id="errors"></ul>
+					<ul id="formQs">
+						<li id="select"><label for="group">*Add Source:</label></li>
+						<li><label for="booktitle">*Title:</label><input type="text" id="booktitle" placeholder="The Great Gatsby" required /></li>
+						<li><label for="author">*Author:</label><input type="text" id="author" placeholder="Last Name, First Name" required /></li>
+						<li><label for="pages">*Pages:</label><input type="number" id="pages" placeholder="180" /></li>
+						<li><label for="date">*Date Finished:</label><input type="date" id="date" /></li></br>
+						<li><label for="rating">How fun was the book?<output for="rating" name="level" id="level">5</output></label>
+							<input name="rlevel" id="rating" type="range"  min="0" max="10" value="level.value" /></li></br>
+	  					<li><label for="genre">What was the genre?</label>
+							<ul class="checkbox">
+								<li><input type="radio" id="scifi" value="Science-Fiction" name="genre" /><label for="scifi">Science-Fiction</label></li>
+								<li><input type="radio" id="fantasy" value="Fantasy" name="genre" /><label for="fantasy">Fantasy</label></li>
+								<li><input type="radio" id="thriller" value="Thriller" name="genre" /><label for="thriller">Thriller</label></li>
+								<li><input type="radio" id="classic" value="Classic" name="genre" /><label for="classic">Classic</label></li>
+								<li><input type="radio" id="periodical" value="Periodical" name="genre" /><label for ="periodical">Periodical</label></li>
+								<li><input type="radio" id="nonfiction" value="Non-Fiction" name="genre" /><label for="nonfiction">Non-Fiction</label></li>
+							</ul>
+						</li></br><!-- User can pick one radio button to express the genre of their book. -->
+						<li><label for="favQ">Add to your favorites?</label>
+							<ul class ="checkbox">
+								<li><input type="checkbox" id="favorite" value="Yes" /><label for="favorite">Loved it!</label></li>
+							</ul>
+						</li> <!-- This checkbox will mark this book as a favorite -->
+						<li><label for="notes">Notes:</label><textarea id="notes" placeholder="Text Here" /></textarea></li>
+					</ul>
+				</fieldset>
+				<input class="submit" type="submit" value="Save your book!" id="submit" />
+			</form>
+		</section>
 		<script src="js/json.js" type="text/javascript"></script>
 		<script src="js/main.js" type="text/javascript"></script>
 	</body>

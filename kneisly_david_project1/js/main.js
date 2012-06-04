@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
 	// getElementById Function
-	function $(x) {
+	function ge(x) {
 		var theElement = document.getElementById(x);
 		return theElement;
 	}
@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	function makeCats () {
 		var formTag = document.getElementsByTagName('form'),
 		// This will become an array of all the form tags in the additem.html doc.
-		selectLi = $('select'),
+		selectLi = ge('select'),
 		makeSelect = document.createElement('select');
 		makeSelect.setAttribute('id', 'groups');
 		for (var i=0, j=bookGroups.length; i < j; i++) {
@@ -42,8 +42,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
 	// Find value of selected checkboxes.
 	function getCheckboxValue() {
-		if ($('favorite').checked) {
-			favoriteValue = $('favorite').value;
+		if (ge('favorite').checked) {
+			favoriteValue = ge('favorite').value;
 		} else {
 			favoriteValue = "No";
 		}
@@ -53,17 +53,20 @@ window.addEventListener('DOMContentLoaded', function() {
 	function toggleControls(n) {
 		switch(n) {
 			case 'on':
-				$('bookForm').style.display = "none";
-				$('clear').style.display = "block";
-				$('display').style.display = "none";
-				$('addNew').style.display = "block";
+				ge('bookForm').style.display = "none";
+				ge('clear').style.display = "block";
+				ge('display').style.display = "none";
+				ge('addNew').style.display = "block";
+				ge('content').style.display = "none";
 				break;
 			case 'off':
-				$('bookForm').style.display = "block";
-				$('clear').style.display = "block";
-				$('display').style.display = "block";
-				$('addNew').style.display = "none";
-				$('items').style.display = "none";
+				ge('bookForm').style.display = "block";
+				ge('clear').style.display = "block";
+				ge('display').style.display = "block";
+				ge('addNew').style.display = "none";
+				ge('content').style.display = "block";
+				ge('items').style.display = "none";
+				ge('bookoutput').style.display = "none";
 				break;
 			default:
 				return false;
@@ -86,19 +89,20 @@ window.addEventListener('DOMContentLoaded', function() {
 		// Gather up all the form field values and store in an object.
 		// Object properties contain an array with the form label and input values
 		var item = {};
-		item.groups = ['Group:', $('groups').value];
-		item.titles = ['Title:', $('booktitle').value];
-		item.authors = ['Author:', $('author').value];
-		item.readpages = ['Pages:', $('pages').value];
-		item.datefinished = ['Date Finished:', $('date').value];
-		item.rating = ['Rating:', $('rating').value];
+		item.groups = ['Group:', ge('groups').value];
+		item.titles = ['Title:', ge('booktitle').value];
+		item.authors = ['Author:', ge('author').value];
+		item.readpages = ['Pages:', ge('pages').value];
+		item.datefinished = ['Date Finished:', ge('date').value];
+		item.rating = ['Rating:', ge('rating').value];
 		item.category = ['Genre:', genreValue];
 		item.favs = ['Favorite:', favoriteValue];
-		item.note = ['Notes:', $('notes').value];
+		item.note = ['Notes:', ge('notes').value];
 		localStorage.setItem(id, JSON.stringify(item));
 		// Data is saved into Local Storage; Using 'Stringify' to convert the object into a string
 		alert('Book is saved!');
 		window.location.reload();
+		scrollTo(0,1);
 		return false;
 	}
 
@@ -121,6 +125,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			// Below for-loop looks in Local Storage for data
 			for (var i=0, l=localStorage.length; i < l; i++) {
 				var makeLi = document.createElement('li');
+				var listTag = makeLi.setAttribute('id', 'bookoutput');
 				var linksLi = document.createElement('li');
 				makeList.appendChild(makeLi);
 				var key = localStorage.key(i);
@@ -141,7 +146,12 @@ window.addEventListener('DOMContentLoaded', function() {
 				// Below function creates Edit and Delete buttons
 				makeItemLinks(localStorage.key(i), linksLi);
 			}
+
 		}
+	}
+	// Function for returning to the form from displayed data (toggle on)
+	function addNewBook () {
+		toggleControls('off');
 	}
 
 	// Get image for the group/category being displayed
@@ -199,13 +209,13 @@ window.addEventListener('DOMContentLoaded', function() {
 		toggleControls('off');
 
 		// Populate the form fields with current localStorage values.
-		$('groups').value = item.groups[1];
-		$('booktitle').value = item.titles[1];
-		$('author').value = item.authors[1];
-		$('pages').value = item.readpages[1];
-		$('date').value = item.datefinished[1];
-		$('level').value = item.rating[1];
-		$('rating').value = item.rating[1];
+		ge('groups').value = item.groups[1];
+		ge('booktitle').value = item.titles[1];
+		ge('author').value = item.authors[1];
+		ge('pages').value = item.readpages[1];
+		ge('date').value = item.datefinished[1];
+		ge('level').value = item.rating[1];
+		ge('rating').value = item.rating[1];
 		var radios = document.forms[0].genre;
 		for (var i=0; i < radios.length; i++) {
 			if (radios[i].value == "Science-Fiction" && item.category[1] == "Science-Fiction") {
@@ -223,15 +233,15 @@ window.addEventListener('DOMContentLoaded', function() {
 			}
 		}
 		if (item.favs[1] == "Yes") {
-			$('favorite').setAttribute('checked', 'checked');
+			ge('favorite').setAttribute('checked', 'checked');
 		}
-		$('notes').value = item.note[1];
+		ge('notes').value = item.note[1];
 
 		// Remove the initial listener from the input 'Save Book'
 		saveBook.removeEventListener('click', storeData);
 		// Change the submit button value to say 'Edit
-		$('submit').value = "Save Edits";
-		var editSubmit = $('submit');
+		ge('submit').value = "Save Edits";
+		var editSubmit = ge('submit');
 		// Save the key value as a property of the editSubmit event
 		editSubmit.addEventListener('click', validate);
 		editSubmit.key = this.key;
@@ -253,7 +263,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	function clearData() {
 		if(localStorage.length === 0) {
 			alert('No books to clear');
-			scrollTo(0,0);
+			scrollTo(0,1);
 		} else {
 			var ask = confirm("Are you sure you want to clear all data?");
 			if(ask) {
@@ -269,12 +279,12 @@ window.addEventListener('DOMContentLoaded', function() {
 
 	function validate(e) {
 		// Define the elements to be checked
-		var getGroup = $('groups');
-		var getTitle = $('booktitle');
-		var getAuthor = $('author');
-		var getPages = $('pages');
-		var getDate = $('date');
-		var errorBox = $('errors');
+		var getGroup = ge('groups');
+		var getTitle = ge('booktitle');
+		var getAuthor = ge('author');
+		var getPages = ge('pages');
+		var getDate = ge('date');
+		var errorBox = ge('errors');
 
 		// Reset the Error Mesages
 		errMsg.innerHTML = "";
@@ -290,37 +300,37 @@ window.addEventListener('DOMContentLoaded', function() {
 		// Group Validation
 		if(getGroup.value === "--Choose a Source--") {
 			var groupError = "Please choose a source.";
-			getGroup.style.border = "1px solid #ff8e33";
-			errorBox.style.border = "1px solid #ff8e33";
+			getGroup.style.border = "1px solid #b60200";
+			errorBox.style.border = "1px solid #b60200";
 			messageAry.push(groupError);
 		}
 		// Title Validation (RegExp)
 		if(getTitle.value === "") {
 			var titleError = "Please enter a book title.";
-			getTitle.style.border = "1px solid #ff8e33";
-			errorBox.style.border = "1px solid #ff8e33";
+			getTitle.style.border = "1px solid #b60200";
+			errorBox.style.border = "1px solid #b60200";
 			messageAry.push(titleError);
 		}
 		// Author Validation
 		if(getAuthor.value === "") {
 			var authorError = "Please enter an author's name.";
-			getAuthor.style.border = "1px solid #ff8e33";
-			errorBox.style.border = "1px solid #ff8e33";
+			getAuthor.style.border = "1px solid #b60200";
+			errorBox.style.border = "1px solid #b60200";
 			messageAry.push(authorError);
 		}
 		// Pages Validation
 		if(getPages.value === "") {
 			var pagesError = "Please enter the # of pages.";
-			getPages.style.border = "1px solid #ff8e33";
-			errorBox.style.border = "1px solid #ff8e33";
+			getPages.style.border = "1px solid #b60200";
+			errorBox.style.border = "1px solid #b60200";
 			messageAry.push(pagesError);
 		}
 		// Date Validation using RegEx
 		var re = /^[12][09][\d][\d]-[01]?[\d]-[0-3]?[\d]$/;
 		if(!(re.exec(getDate.value))) {
 			var dateError = "Please enter a valid date.";
-			getDate.style.border = "1px solid #ff8e33";
-			errorBox.style.border = "1px solid #ff8e33";
+			getDate.style.border = "1px solid #b60200";
+			errorBox.style.border = "1px solid #b60200";
 			messageAry.push(dateError);
 		}
 		// If there are errors, display messages
@@ -348,20 +358,22 @@ window.addEventListener('DOMContentLoaded', function() {
 	bookGroups = ["--Choose a Source--", "Book", "EReader", "Tablet", "Online"],
 	genreValue,
 	favoriteValue = "No",
-	errMsg = $('errors'),
+	errMsg = ge('errors'),
 	level
 	;
 	
 	makeCats();
 	
-	var displayBooks = $('display');
+	var displayBooks = ge('display');
 	displayBooks.addEventListener('click', showData);
-	var clearBooks = $('clear');
+	var clearBooks = ge('clear');
 	clearBooks.addEventListener('click', clearData);
+	var addBooks = ge('addNew');
+	addBooks.addEventListener('click', addNewBook);
 	// The saveBook variable now it instructs the validate function to be triggered first.
-	var saveBook = $('submit');
+	var saveBook = ge('submit');
 	saveBook.addEventListener('click', validate);
 	//Hides the address bar when page loads.
-	var hideAddress = window.scrollTo(0,0);
+	var hideAddress = window.scrollTo(0,1);
 	window.addEventListener('load', hideAddress);
 });

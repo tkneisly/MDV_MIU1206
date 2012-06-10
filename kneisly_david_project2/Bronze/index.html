@@ -1,58 +1,79 @@
 <!DOCTYPE html>
-<!-- Week 1, Project 1 -->
+<!-- Week 2, Project 2 -->
 <!-- David Tyler Kneisly -->
 <!-- MUI 1206 -->
 <!-- Book Tracker -->
 <html lang="en">
 	<!-- HTML DOCUMENT HEADER -->
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="utf-8">
+		<title>David Kneisly:  Book Tracker</title>
+		<meta name="author" content="David Tyler Kneisly">
 		<meta name="description" content="index page for the Book Tracker web app project for VFW 1205." />
 		<meta name="keywords" content="html5, mobile development, Full Sail University, Reading, Read, Write, Novel, Book, Education, Authors, Genres, Tracker, Track" />
 		<meta name="robots" content="index, follow" />
-		<meta name="viewport" content="user-scalable=no, width=device-width" />
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="viewport" content="target-densitydpi=device-dpi" />
-		<meta name="HandHeldFriendly" content="True" />
-		<meta name="MobileOptimized" content="320" /> 
-		<meta name="author" content="David Tyler Kneisly" />
-		<title>David Kneisly:  Book Tracker</title>
-		<link href="css/styles.css" rel="stylesheet" type="text/css" />
+		<!-- Mobile IE needs ClearType for smoothing fonts -->
+		<meta http-equiv="cleartype" content="on">
+		<!-- Stylesheet Links -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<!-- Modernizr Link -->
+		<script src="js/libs/modernizr.custom.min.js"></script>
 	</head>
+	
+	
 	<!-- Document Body -->
 	<body>
-		<section class="header">
-			<div id="fixedribbon">
-				<span class="ribbon"><img src="images/ribbon.png" /></span>
-			</div>
-			<header>
+		<!-- Start of Home Page -->
+		<div data-role="page" id="home" style="background-image:url(images/ribbon.png)">
+			<!-- Header -->
+			<div data-role="header" id="header" data-position="fixed" data-theme="c">
 				<h1>Book Tracker</h1>
-			</header>
-		</section>
-		<section class="cta">
-			<div id="featurestack">
-				<a href = "additem.html"><p id="function">Get Started</p> </a>
-				<h5>Click to track what you're reading</h5>
-				<a href ="additem.html"><img id="logo" src="images/logo.png" /></a>
 			</div>
-		</section>
-		<section class="content">
-			<div id="searchstack">
-				<input type="search" class="search" name="s" id="s" placeholder="Search saved books..." results="5" autosave="search_history" />
-				<input type="submit" class="submit" value="Go" id="searchsub" />
+			<!-- Page Content "CTA"-->
+			<div data-role="content" id="cta">
+				<a href="additem.html" id="featurestack">
+					<div>
+						<p id="function">Get Started</p>
+						<h5>Click to track what you're reading</h5>
+						<span class="img_wrapper"><img id="logo" src="images/logo.png"/></span>
+					</div>
+				</a>
 			</div>
-			<div id="browsestack">
-				<li id="browse">Browse books by genre...</li>
-				<li id="browsing"><a href="http://www.google.com">Science-Fiction</a></li>
-				<li id="browsing"><a href="http://www.google.com">Fantasy</a></li>
-				<li id="browsing"><a href="http://www.google.com">Thriller</a></li>
-				<li id="browsing"><a href="http://www.google.com">Classical</a></li>
-				<li id="browsing"><a href="http://www.google.com">Periodical</a></li>
-				<li id="browsing"><a href="http://www.google.com">Non-Fiction</a></li>
-
+			<!-- Page Content "Search and Browse Genre List" -->
+			<div data-role="content" id="browsecontent">
+				<ul id="browse" data-role="listview" data-inset="true" data-filter="true" data-dividertheme="b">
+					<li data-role="list-divider" class="listheader">Browse books by genre...</li>
+					<li data-theme="c" id="genreli"><a href="#SciFi">Science-Fiction</a></li>
+					<li data-theme="c" id="genreli"><a href="#Fantasy">Fantasy</a></li>
+					<li data-theme="c" id="genreli"><a href="#Thriller">Thriller</a></li>
+					<li data-theme="c" id="genreli"><a href="#Classical">Classical</a></li>
+					<li data-theme="c" id="genreli"><a href="#Periodical">Periodical</a></li>
+					<li data-theme="c" id="genreli"><a href="#NonFiction">Non-Fiction</a></li>
+				</ul>
 			</div>
-		</section>
-		<script>
-			window.onload=scrollTo(0,1);
-		</script>
+			<!-- Footer -->
+			<div data-role="footer" data-id="footer" data-position="fixed" data-theme="d" id="nav_footer">
+				<div data-role="navbar" data-position="fixed" id="navbar">
+					<ul>
+						<li><a href="#home" class="ui-btn-active">Home</a></li>
+						<li><a href="#form" data-transition="slideup">Form</a></li>
+						<li><a href="#chang">Change</a></li>
+						<li><a href="#search">Search</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- End of Home Page -->
+		
+		<!-- JavaScript Links -->
+		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
 	</body>
+<!-- End of Document -->
 </html>

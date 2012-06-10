@@ -1,55 +1,105 @@
 /** 
- * Week 1, Project 1 
+ * Week 2, Project 2 
  * David Tyler Kneisly 
  * MUI 1206
  * Book Tracker
  */
-
-body {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	margin: auto;
-	overflow: scroll;
-	background-color: #9a9a9a
-}
-div#fixedribbon {
-	position: center;
-}
-.ribbon {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: -75px;
-}
-header {
-	display: block;
-	position: relative;
-	padding: 5px 0px 5px 0px;
-	width: 100%;
-	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#dfe1e5), color-stop(1, #ebedf2) );
-	background: -moz-linear-gradient( center bottom, #dfe1e5 0%, #ebedf2 100% );
-	border: 1px solid #aaa;
+ 
+.ui-header {
 	-moz-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 	-webkit-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 	box-shadow: 0 0 1em rgba(0, 0, 0, .5);
-
 }
 h1 {
-	position: relative;
 	font-family: Helvetica;
 	font-size: 20px;
 	margin: 3px;
 	color: #2a2a2a;
-	width: 95%;
-	text-align: center;
 	text-shadow: 1px 1px 1px #fff;
 }
 h5 {
 	position: relative;
+	text-align: center;
 	font-family: Helvetica;
 	color: white;
 	font-weight: lighter;
-	margin: 20px 0px 15px;
+	margin: 0px 0px 10px;
 }
+#home {
+	background-repeat: no-repeat;
+	background-attachment: absolute;
+	background-position-x: center;
+	background-position-y: -95px;
+	background-color: #9a9a9a;
+}
+p#function {
+	text-align: center;
+	font-family: Arial;
+	color: white;
+	font-size: 40px;
+	font-weight: lighter;
+	font-stretch: ultra-condensed;
+	text-shadow: 1px 1px 1px black;
+	margin: 0 0 0 0;
+}
+*.img_wrapper {
+	display: block;
+	text-align: center !important;
+	margin: 0 0 5px;
+}
+*#featurestack {
+	text-decoration: none;
+	border-bottom: none !important;
+}
+/*
+.ui-listview {
+	position: relative;
+	padding: 5px 5px 5px 5px;
+	border-radius: 6px;
+	border: none;
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#c0c0c0), color-stop(1, #ebedf2) );
+	background: -moz-linear-gradient( center bottom, #c0c0c0 0%, #cdcdcd 100% );
+	border: 1px solid #fff;
+	-moz-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
+	-webkit-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
+	box-shadow: 0 0 1em rgba(0, 0, 0, .5);
+}
+*/
+.ui-li-divider {
+	border: none;
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#808080), color-stop(1, #9a9a9a) );
+	background: -moz-linear-gradient( center bottom, #808080 0%, #9a9a9a 100% );
+	box-shadow: 0 8px 1em rgba(0, 0, 0, .5);
+	color: white;
+	text-shadow: none;
+}
+#genreli {
+	box-shadow: 0 8px 1em rgba(0, 0, 0, .5);
+}
+#browsecontent {
+	border: none;
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#c0c0c0), color-stop(1, #ebedf2) );
+	background: -moz-linear-gradient( center bottom, #c0c0c0 0%, #cdcdcd 100% );
+	border: 1px solid #fff;
+	-moz-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
+	-webkit-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
+	box-shadow: 0 0 1em rgba(0, 0, 0, .5);
+}
+#navbar {
+	-moz-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
+	-webkit-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
+	box-shadow: 0 0 1em rgba(0, 0, 0, .5);
+	height: 35px;
+	padding: 0;
+}
+.ui-btn-active {
+	color: black;
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#c0c0c0), color-stop(1, #ebedf2) );
+	background: -moz-linear-gradient( center bottom, #c0c0c0 0%, #cdcdcd 100% );
+	border: 1px solid #fff;
+	text-shadow: none;
+}
+/*
 nav {
 	display: block;
 	position: relative;
@@ -69,15 +119,9 @@ nav {
 p#browse {
 	font-size: 11px;
 }
-p#function {
-	font-family: Arial;
-	color: white;
-	font-size: 40px;
-	font-weight: lighter;
-	font-stretch: ultra-condensed;
-	text-shadow: 1px 1px 1px black;
-	margin: 30px 0 -20px;
-}
+*/
+
+/*
 a {
 	outline: none;
 	color: black;
@@ -173,8 +217,6 @@ legend {
 	border-radius: 6px;
 	box-shadow: 0 0 3px #ccc, 0 10px 15px #eee inset;
 	vertical-align: bottom;
-	/* Source for box-shadow style: http://webdesign.tutsplus.com/tutorials/site-elements/bring-your-forms-up-to-date-with-css3-and-html5-validation/  */
-	/* Box-shadow style only visible in desktop browsers.*/
 }
 .fieldSet input:focus,
 .fieldSet textarea:focus {
@@ -212,11 +254,6 @@ section.content {
 	-webkit-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 	box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 }
-/*div#items {
-	position: relative;
-	display: block;
-	width: 100%;
-}*/
 div#items {
 	position: relative;
 	margin: 24px 0px 8px 0px;
@@ -310,10 +347,7 @@ div#searchstack {
 	box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 	text-align: center;
 }
-div#featurestack {
-	text-align: center;
-	position: relative;
-}
+/*
 output {
 	position: relative;
 	background: -webkit-gradient(linear, left top, left bottom, from (#444444), to (#999999));

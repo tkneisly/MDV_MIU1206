@@ -1,7 +1,8 @@
-// Week 1, Project 1
+// Week 3, Project 3
 // David Tyler Kneisly
 // MUI 1206
 // Book Tracker
+// Gold Main.JS
 
 // Wait until the DOM is ready
 window.addEventListener('DOMContentLoaded', function() {

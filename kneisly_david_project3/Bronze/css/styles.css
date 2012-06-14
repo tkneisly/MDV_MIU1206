@@ -1,16 +1,19 @@
-/** 
- * Week 2, Project 2 
+/*
+ * Week 3, Project 3 
  * David Tyler Kneisly 
  * MUI 1206
  * Book Tracker
+ * Bronze Style Sheet
  */
  
 .ui-header {
+	/* Global header for entire app */
 	-moz-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 	-webkit-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 	box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 }
 h1 {
+	/* Font for .ui-header */
 	font-family: Helvetica;
 	font-size: 20px;
 	margin: 3px;
@@ -18,21 +21,27 @@ h1 {
 	text-shadow: 1px 1px 1px #fff;
 }
 h5 {
+	/* Subtitle for CTA */
 	position: relative;
 	text-align: center;
 	font-family: Helvetica;
 	color: white;
 	font-weight: lighter;
-	margin: 0px 0px 10px;
+	text-shadow: 1px 1px 1px black;
+	margin: 0px 0px 25px;
 }
-#home {
-	background-repeat: no-repeat;
-	background-attachment: absolute;
-	background-position-x: center;
-	background-position-y: -95px;
-	background-color: #9a9a9a;
+h6 {
+	/* Subtitle for banner CTA */
+	position: relative;
+	text-align: center;
+	font-family: Helvetica;
+	color: white;
+	font-weight: lighter;
+	text-shadow: 1px 1px 1px black;
+	margin: 0 0 0 0;
 }
 p#function {
+	/* Global CTA font and positioning */
 	text-align: center;
 	font-family: Arial;
 	color: white;
@@ -42,14 +51,75 @@ p#function {
 	text-shadow: 1px 1px 1px black;
 	margin: 0 0 0 0;
 }
+p.banner {
+	/* Global CTA font and positioning */
+	text-align: center;
+	font-family: Arial;
+	color: white;
+	font-size: 30px;
+	font-weight: lighter;
+	font-stretch: ultra-condensed;
+	text-shadow: 1px 1px 1px black;
+	margin: 0 0 0 0;
+}
 *.img_wrapper {
+	/* Span wrapper for app logo on #home */
 	display: block;
 	text-align: center !important;
-	margin: 0 0 5px;
+	margin: -10px;
 }
-*#featurestack {
+*.featurestack {
+	/* Div wrapper for p#function, h5, and .img_wrapper */
 	text-decoration: none;
 	border-bottom: none !important;
+}
+#home {
+	/* Positions the background Ribbon and sets the background color */
+	background-repeat: no-repeat;
+	background-attachment: absolute;
+	background-position-x: center;
+	background-position-y: -75px;
+	background-color: #9a9a9a;
+}
+.browser {
+	/* Positions the background Ribbon and sets the background color */
+	background-repeat: no-repeat;
+	background-attachment: absolute;
+	background-position-x: center;
+	background-position-y: 30px;
+	background-color: #9a9a9a;
+}
+/*
+#ctatext {
+	color: white;
+	font-size: 14px;
+	text-shadow: 1px 1px 1px black;
+	line-height: 11px;
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: -5px;
+}
+#bbuttontext {
+	color: black;
+	font-size: 14px;
+	text-shadow: 1px 1px 1px white;
+	line-height: 11px;
+	text-align: center;
+	margin-top: -5px;
+	margin-bottom: 30px;
+}
+*/
+#bbuttontext {
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 11px;
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+#homebrowse {
+	/* Additional margin style for .browse on #home */
+	margin-top: 40px;
 }
 /*
 .ui-listview {
@@ -57,27 +127,24 @@ p#function {
 	padding: 5px 5px 5px 5px;
 	border-radius: 6px;
 	border: none;
-	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#c0c0c0), color-stop(1, #ebedf2) );
-	background: -moz-linear-gradient( center bottom, #c0c0c0 0%, #cdcdcd 100% );
+	background: rgba(255,255,255,0);
 	border: 1px solid #fff;
-	-moz-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
-	-webkit-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
-	box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 }
 */
 .ui-li-divider {
+	/* jQuery li element for dividing (or heading) li's in a ul */
 	border: none;
 	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#808080), color-stop(1, #9a9a9a) );
 	background: -moz-linear-gradient( center bottom, #808080 0%, #9a9a9a 100% );
 	box-shadow: 0 8px 1em rgba(0, 0, 0, .5);
-	color: white;
-	text-shadow: none;
+	-moz-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
+	-webkit-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
+	box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 }
-#genreli {
-	box-shadow: 0 8px 1em rgba(0, 0, 0, .5);
-}
-#browsecontent {
+.browse {
+	/* Lists or content inside of the "content" data-role */
 	border: none;
+	margin-top: 0px !important;
 	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#c0c0c0), color-stop(1, #ebedf2) );
 	background: -moz-linear-gradient( center bottom, #c0c0c0 0%, #cdcdcd 100% );
 	border: 1px solid #fff;
@@ -85,19 +152,71 @@ p#function {
 	-webkit-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 	box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 }
+.body {
+	/* Background, padding, and margins for "content" data-role */
+	border: none;
+	padding-bottom: 40px;
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#c0c0c0), color-stop(1, #ebedf2) );
+	background: -moz-linear-gradient( center bottom, #c0c0c0 0%, #cdcdcd 100% );
+	border: 1px solid #fff;
+	-moz-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
+	-webkit-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
+	box-shadow: 0 0 1em rgba(0, 0, 0, .5);
+}
+.sourcelist {
+	/* Lists or content inside of the "content" data-role */
+	border: none;
+	margin-top: 0px;
+}
+.genrelist {
+	/* Lists or content inside of the "content" data-role */
+	background: none !important;
+	border: none !important;
+}
+.genreheader {
+	/* jQuery li element for heading the Genre lists */
+	border: none;
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#808080), color-stop(1, #9a9a9a) );
+	background: -moz-linear-gradient( center bottom, #808080 0%, #9a9a9a 100% );
+	/*background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#97322a), color-stop(1, #a7372d) );
+	background: -moz-linear-gradient( center bottom, #97322a 0%, #a7372d 100% );*/
+	box-shadow: 0 8px 1em rgba(0, 0, 0, .5);
+	border-top: #dbdbdb;
+	/* border-top: 3pxrgba(0,0,0,0.5)	color: white; */
+	text-shadow: none;
+	margin-top: 5px;
+	margin-bottom: 20px;
+}
+li {
+	box-shadow: 0 8px 1em rgba(0, 0, 0, .5);
+}
+#bookgroups {
+	/* Additional margin and padding style for .browse on sub # pages */
+	margin: 0px;
+	border-bottom: none !important;
+}
 #navbar {
+	/* Global navbar in app footer */
 	-moz-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 	-webkit-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 	box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 	height: 35px;
 	padding: 0;
 }
+.resref {
+	color: white !important;
+	outline: none !important;
+}
 .ui-btn-active {
+	/* Global style for jQuery active buttons */
 	color: black;
 	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#c0c0c0), color-stop(1, #ebedf2) );
 	background: -moz-linear-gradient( center bottom, #c0c0c0 0%, #cdcdcd 100% );
 	border: 1px solid #fff;
 	text-shadow: none;
+}
+#resultlist {
+	margin-bottom: 40px;
 }
 /*
 nav {

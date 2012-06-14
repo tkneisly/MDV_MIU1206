@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<!-- Week 2, Project 2 -->
+<!-- Week 3, Project 3 -->
 <!-- David Tyler Kneisly -->
 <!-- MUI 1206 -->
 <!-- Book Tracker -->
+<!-- Bronze index.html -->
+
 <html lang="en">
 	<!-- HTML DOCUMENT HEADER -->
 	<head>
@@ -31,45 +33,172 @@
 		<!-- Start of Home Page -->
 		<div data-role="page" id="home" style="background-image:url(images/ribbon.png)">
 			<!-- Header -->
-			<div data-role="header" id="header" data-position="fixed" data-theme="c">
+			<div data-role="header" id="header" data-theme="c" data-position="fixed">
 				<h1>Book Tracker</h1>
 			</div>
 			<!-- Page Content "CTA"-->
 			<div data-role="content" id="cta">
-				<a href="additem.html" id="featurestack">
+				<a href="additem.html" class="featurestack">
 					<div>
 						<p id="function">Get Started</p>
-						<h5>Click to track what you're reading</h5>
-						<span class="img_wrapper"><img id="logo" src="images/logo.png"/></span>
+						<h5>Click here to track a new book</h5>
+						<span class="img_wrapper"><img id="logo" src="images/logo.png" alt="logo"/></span>
 					</div>
 				</a>
 			</div>
-			<!-- Page Content "Search and Browse Genre List" -->
-			<div data-role="content" id="browsecontent">
-				<ul id="browse" data-role="listview" data-inset="true" data-filter="true" data-dividertheme="b">
-					<li data-role="list-divider" class="listheader">Browse books by genre...</li>
-					<li data-theme="c" id="genreli"><a href="#SciFi">Science-Fiction</a></li>
-					<li data-theme="c" id="genreli"><a href="#Fantasy">Fantasy</a></li>
-					<li data-theme="c" id="genreli"><a href="#Thriller">Thriller</a></li>
-					<li data-theme="c" id="genreli"><a href="#Classical">Classical</a></li>
-					<li data-theme="c" id="genreli"><a href="#Periodical">Periodical</a></li>
-					<li data-theme="c" id="genreli"><a href="#NonFiction">Non-Fiction</a></li>
-				</ul>
+			<!-- Page Content "Search and Browse Science-Fiction Genre" -->
+			<div data-role="content" class="body">
+				<div data-role="collapsible-set" class="browse" id="bookgroups" data-filter="true">
+					<div data-role="collapsible" data-collapsed="true" class="sourcelist">
+						<h3 id="expandhead">Book</h3>
+						<ul data-role="listview">
+							<li data-role="list-divider" class="genreheader">Browse your books by genre...</li>
+						</ul>
+						<ul data-role="listview" data-inset="true" class="genrelist">
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Science-Fiction</a></li>
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Fantasy</a></li>
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Thriller</a></li>
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Classical</a></li>
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Periodical</a></li>
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Non-Fiction</a></li>
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">All Genres</a></li>
+						</ul>
+					</div>
+					<div data-role="collapsible" data-collapsed="true" class="genrelist">
+						<h3 id="expandhead">E-Reader</h3>
+						<ul data-role="listview">
+							<li data-role="list-divider" class="genreheader">Browse your e-reader titles by genre...</li>
+						</ul>
+						<ul data-role="listview" data-inset="true">
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Science-Fiction</a></li>
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Fantasy</a></li>
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Thriller</a></li>
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Classical</a></li>
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Periodical</a></li>
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Non-Fiction</a></li>
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">All Genres</a></li>
+						</ul>
+					</div>
+					<div data-role="collapsible" data-collapsed="true" class="genrelist">
+						<h3 id="expandhead">Tablet</h3>
+						<ul data-role="listview">
+							<li data-role="list-divider" class="genreheader">Browse your tablet titles by genre...</li>
+						</ul>
+						<ul data-role="listview" data-inset="true">
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Science-Fiction</a></li>
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Fantasy</a></li>
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Thriller</a></li>
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Classical</a></li>
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Periodical</a></li>
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Non-Fiction</a></li>
+							<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">All Genres</a></li>
+						</ul>
+					</div>
+					<div data-role="collapsible" data-collapsed="true">
+						<h3 id="expandhead">Online</h3>
+						<p id="expandbody">This book was amazing!</p>
+					</div>
+				</div>
 			</div>
 			<!-- Footer -->
-			<div data-role="footer" data-id="footer" data-position="fixed" data-theme="d" id="nav_footer">
-				<div data-role="navbar" data-position="fixed" id="navbar">
+			<div data-role="footer" data-id="footer" data-position="fixed" data-theme="d" data-tap-toggle="false" id="nav_footer">
+				<div data-role="navbar" data-position="fixed" data-tap-toggle="false" id="navbar">
 					<ul>
-						<li><a href="#home" class="ui-btn-active">Home</a></li>
-						<li><a href="#form" data-transition="slideup">Form</a></li>
-						<li><a href="#chang">Change</a></li>
-						<li><a href="#search">Search</a></li>
+						<li><a href="#home" data-transition="slide" data-direction="reverse">Home</a></li>
+						<li><a href="#add" data-transition="slideup">Add New</a></li>
+						<li><a href="#view" data-transition="slideup">View All</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<!-- End of Home Page -->
-		
+		<!-- Start of #Genres 'Single-Page Drill-Down' -->
+		<div data-role="page" id="Results" class="browser" style="background-image:url(images/banner.png)">
+			<!-- Header -->
+			<div data-role="header" data-id="header" data-position="fixed" data-theme="c" data-tap-toggle="false" data-add-back-btn="true" id="header">
+				<h1>Book Tracker</h1>
+			</div>
+			<!-- Page Content "CTA" -->
+			<div data-role="content" data-id="cta" id="cta">
+				<a href="#Genres" data-rel="back" class="featurestack">
+					<div>
+						<p class="banner">Results</p>
+						<h6>or click here to go back</h6>
+					</div>
+				</a>
+			</div>
+			<!-- Page Content "View and Search Browse Results" -->
+			<div data-role="content" class="body">
+				<ul class="browse" data-role="listview" data-dividertheme="b" data-filter="true" id="resultlist">
+					<!-- List divider/header with dynamic links -->
+					<li data-role="list-divider" class="listheader" id="showbrwstyp">
+						<span>Viewing:</span>
+						<span><a href="#BookType" class="resref" id="typeref">Books</a></span>
+						<span><a href="#Genres" class="resref" id="genreref">Science-Fiction</a></span>
+					</li>
+					<li data-theme="c" class="resultli">
+						<img src="images/Book.png" border="0">
+						<h3 class="showtitle">Thinking Fourth Dimensionally</h3>
+						<p class="showauthoer">Emmett Brown</p>
+						<p>
+							<span class="showpgs">Pages: 180</span>
+							<span class="p_space"> / </span>
+							<span class="showrating">Rating: 10</span>
+						</p>
+					</li>
+					<li data-theme="c" class="resultli">
+						<img src="images/Book.png"/ class="showimg">
+						<h3 class="showtitle">Insurgent (Divergent)</h3>
+						<p class="showauthoer">Veronica Roth</p>
+						<p>
+							<span class="showpgs">Pages: 362</span>
+							<span class="p_space"> / </span>
+							<span class="showrating">Rating: 7</span>
+						</p>
+					</li>
+					<li data-theme="c" class="resultli">
+						<img src="images/Book.png"/ class="showimg">
+						<h3 class="showtitle">Gone Girl</h3>
+						<p class="showauthoer">Gillian Flynn</p>
+						<p>
+							<span class="showpgs">Pages: 355</span>
+							<span class="p_space"> / </span>
+							<span class="showrating">Rating: 5</span>
+						</p>
+					</li>
+					<li data-theme="c" class="resultli">
+						<img src="images/Book.png"/ class="showimg">
+						<h3 class="showtitle">The Amateur</h3>
+						<p class="showauthoer">Edward Klein</p>
+						<p>
+							<span class="showpgs">Pages: 254</span>
+							<span class="p_space"> / </span>
+							<span class="showrating">Rating: 7</span>
+						</p>
+					</li>
+					<li data-theme="c" class="resultli">
+						<img src="images/Book.png"/ class="showimg">
+						<h3 class="showtitle">The Columbus Affair</h3>
+						<p class="showauthoer">Steve Berry</p>
+						<p>
+							<span class="showpgs">Pages: 412</span>
+							<span class="p_space"> / </span>
+							<span class="showrating">Rating: 5</span>
+						</p>
+					</li>
+				</ul>
+			</div>
+			<!-- Footer -->
+			<div data-role="footer" data-id="footer" data-position="fixed" data-theme="d" data-tap-toggle="false" id="nav_footer">
+				<div data-role="navbar" data-position="fixed" data-tap-toggle="false" id="navbar">
+					<ul>
+						<li><a href="#home" data-transition="slide" data-direction="reverse">Home</a></li>
+						<li><a href="#add" data-transition="slideup">Add New</a></li>
+						<li><a href="#view" data-transition="slideup">View All</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 		<!-- JavaScript Links -->
 		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>

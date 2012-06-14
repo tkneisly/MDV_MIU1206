@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<!-- Week 2, Project 2 -->
+<!-- Week 3, Project 3 -->
 <!-- David Tyler Kneisly -->
 <!-- MUI 1206 -->
 <!-- Book Tracker -->
+<!-- Gold Index.html -->
+
 <html lang="en">
 	<!-- HTML DOCUMENT HEADER -->
 	<head>
@@ -31,45 +33,200 @@
 		<!-- Start of Home Page -->
 		<div data-role="page" id="home" style="background-image:url(images/ribbon.png)">
 			<!-- Header -->
-			<div data-role="header" id="header" data-position="fixed" data-theme="c">
+			<div data-role="header" data-id="header" data-theme="c" data-position="fixed" data-tap-toggle="false" id="header">
 				<h1>Book Tracker</h1>
 			</div>
 			<!-- Page Content "CTA"-->
 			<div data-role="content" id="cta">
-				<a href="additem.html" id="featurestack">
+				<a href="additem.html" class="featurestack" data-transition="slideup">
 					<div>
 						<p id="function">Get Started</p>
-						<h5>Click to track what you're reading</h5>
-						<span class="img_wrapper"><img id="logo" src="images/logo.png"/></span>
+						<h5>Click here to track a new book...</h5>
+						<span class="img_wrapper"><img id="logo" src="images/logo.png" alt="logo"/></span>
 					</div>
 				</a>
+				<!-- <p id="ctatext">Click above to get started</p> -->
 			</div>
-			<!-- Page Content "Search and Browse Genre List" -->
-			<div data-role="content" id="browsecontent">
-				<ul id="browse" data-role="listview" data-inset="true" data-filter="true" data-dividertheme="b">
-					<li data-role="list-divider" class="listheader">Browse books by genre...</li>
-					<li data-theme="c" id="genreli"><a href="#SciFi">Science-Fiction</a></li>
-					<li data-theme="c" id="genreli"><a href="#Fantasy">Fantasy</a></li>
-					<li data-theme="c" id="genreli"><a href="#Thriller">Thriller</a></li>
-					<li data-theme="c" id="genreli"><a href="#Classical">Classical</a></li>
-					<li data-theme="c" id="genreli"><a href="#Periodical">Periodical</a></li>
-					<li data-theme="c" id="genreli"><a href="#NonFiction">Non-Fiction</a></li>
-				</ul>
-			</div>
+			<!-- Page Content "Browse Button" -->
+			<div data-role="content" class="body" id="homebrowse">
+				<p id="bbuttontext">...or click below to browse</p>
+				<a href="#BookType" data-role="button" data-transition="slide" id="brbutton">Browse your collection...</a>
+			</div id="hometext">
 			<!-- Footer -->
-			<div data-role="footer" data-id="footer" data-position="fixed" data-theme="d" id="nav_footer">
-				<div data-role="navbar" data-position="fixed" id="navbar">
+			<div data-role="footer" data-id="footer" data-position="fixed" data-theme="d" data-tap-toggle="false" id="nav_footer">
+				<div data-role="navbar" data-position="fixed" data-tap-toggle="false" id="navbar">
 					<ul>
 						<li><a href="#home" class="ui-btn-active">Home</a></li>
-						<li><a href="#form" data-transition="slideup">Form</a></li>
-						<li><a href="#chang">Change</a></li>
-						<li><a href="#search">Search</a></li>
+						<li><a href="#add" data-transition="slideup">Add New</a></li>
+						<li><a href="#view"data-transition="slideup">View All</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<!-- End of Home Page -->
-		
+		<!-- Start of #BookType page "Single-Page Drill-Down" -->
+		<div data-role="page" id="BookType" class="browser" style="background-image:url(images/banner.png)">
+			<!-- Header -->
+			<div data-role="header" data-id="header" data-position="fixed" data-theme="c" data-tap-toggle="false" data-add-back-btn="true" id="header">
+				<a href="#home"><h1>Book Tracker</h1></a>
+			</div>
+			<!-- Page Content "CTA" -->
+			<div data-role="content" data-id="cta" id="cta">
+				<a href="#home" data-rel="back" class="featurestack">
+					<div>
+						<p class="banner">Browse by Type</p>
+						<h6>or click here to go back</h6>
+					</div>
+				</a>
+			</div>
+			<!-- Page Content "Narrow Browse Results by Type" -->
+			<div data-role="content" class="body">
+				<ul class="browse" data-role="listview" data-inset="true" data-dividertheme="b">
+					<li data-role="list-divider" class="listheader">Begin by picking a type...</li>
+					<li data-theme="c" class="genreli"><a href="#Genres" data-transition="slide" id="aBook">Book</a></li>
+					<li data-theme="c" class="genreli"><a href="#Genres" data-transition="slide" id="aEReader">E-Reader</a></li>
+					<li data-theme="c" class="genreli"><a href="#Genres" data-transition="slide" id="aTablet">Tablet</a></li>
+					<li data-theme="c" class="genreli"><a href="#Genres" data-transition="slide" id="aOnline">Online</a></li>
+				</ul>
+			</div>
+			<!-- Footer -->
+			<div data-role="footer" data-id="footer" data-position="fixed" data-theme="d" data-tap-toggle="false" id="nav_footer">
+				<div data-role="navbar" data-position="fixed" data-tap-toggle="false" id="navbar">
+					<ul>
+						<li><a href="#home" data-transition="slide" data-direction="reverse">Home</a></li>
+						<li><a href="#add" data-transition="slideup">Add New</a></li>
+						<li><a href="#view" data-transition="slideup">View All</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- End of #BookType page -->
+		<!-- Start of #Genres 'Single-Page Drill-Down' -->
+		<div data-role="page" id="Genres" class="browser" style="background-image:url(images/banner.png)">
+			<!-- Header -->
+			<div data-role="header" data-id="header" data-position="fixed" data-theme="c" data-tap-toggle="false" data-add-back-btn="true" id="header">
+				<a href="#home"><h1>Book Tracker</h1></a>
+			</div>
+			<!-- Page Content "CTA" -->
+			<div data-role="content" data-id="cta" id="cta">
+				<a href="#BookType" data-rel="back" class="featurestack">
+					<div>
+						<p class="banner">Browse by Genre</p>
+						<h6>or click here to go back</h6>
+					</div>
+				</a>
+			</div>
+			<!-- Page Content "Narrow Browse Results By Genre" -->
+			<div data-role="content" class="body">
+				<ul class="browse" data-role="listview" data-inset="true" data-dividertheme="b">
+					<li data-role="list-divider" class="listheader">Pick a genre...</li>
+					<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Science-Fiction</a></li>
+					<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Fantasy</a></li>
+					<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Thriller</a></li>
+					<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Classical</a></li>
+					<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Periodical</a></li>
+					<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Non-Fiction</a></li>
+				</ul>
+			</div>			
+			<!-- Footer -->
+			<div data-role="footer" data-id="footer" data-position="fixed" data-theme="d" data-tap-toggle="false" id="nav_footer">
+				<div data-role="navbar" data-position="fixed" data-tap-toggle="false" id="navbar">
+					<ul>
+						<li><a href="#home" data-transition="slide" data-direction="reverse">Home</a></li>
+						<li><a href="#add" data-transition="slideup">Add New</a></li>
+						<li><a href="#view" data-transition="slideup">View All</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- End of #Genres page -->
+		<!-- Start of #Genres 'Single-Page Drill-Down' -->
+		<div data-role="page" id="Results" class="browser" style="background-image:url(images/banner.png)">
+			<!-- Header -->
+			<div data-role="header" data-id="header" data-position="fixed" data-theme="c" data-tap-toggle="false" data-add-back-btn="true" id="header">
+				<a href="#home"><h1>Book Tracker</h1></a>
+			</div>
+			<!-- Page Content "CTA" -->
+			<div data-role="content" data-id="cta" id="cta">
+				<a href="#Genres" data-rel="back" class="featurestack">
+					<div>
+						<p class="banner">Results</p>
+						<h6>or click here to go back</h6>
+					</div>
+				</a>
+			</div>
+			<!-- Page Content "View and Search Browse Results" -->
+			<div data-role="content" class="body">
+				<ul class="browse" data-role="listview" data-dividertheme="b" data-filter="true" id="resultlist">
+					<!-- List divider/header with dynamic links -->
+					<li data-role="list-divider" class="listheader" id="showbrwstyp">
+						<span>Viewing:</span>
+						<span><a href="#BookType" class="resref" id="typeref">Books</a></span>
+						<span><a href="#Genres" class="resref" id="genreref">Science-Fiction</a></span>
+					</li>
+					<li data-theme="c" class="resultli">
+						<img src="images/Book.png" border="0">
+						<h3 class="showtitle">Thinking Fourth Dimensionally</h3>
+						<p class="showauthoer">Emmett Brown</p>
+						<p>
+							<span class="showpgs">Pages: 180</span>
+							<span class="p_space"> / </span>
+							<span class="showrating">Rating: 10</span>
+						</p>
+					</li>
+					<li data-theme="c" class="resultli">
+						<img src="images/Book.png"/ class="showimg">
+						<h3 class="showtitle">Insurgent (Divergent)</h3>
+						<p class="showauthoer">Veronica Roth</p>
+						<p>
+							<span class="showpgs">Pages: 362</span>
+							<span class="p_space"> / </span>
+							<span class="showrating">Rating: 7</span>
+						</p>
+					</li>
+					<li data-theme="c" class="resultli">
+						<img src="images/Book.png"/ class="showimg">
+						<h3 class="showtitle">Gone Girl</h3>
+						<p class="showauthoer">Gillian Flynn</p>
+						<p>
+							<span class="showpgs">Pages: 355</span>
+							<span class="p_space"> / </span>
+							<span class="showrating">Rating: 5</span>
+						</p>
+					</li>
+					<li data-theme="c" class="resultli">
+						<img src="images/Book.png"/ class="showimg">
+						<h3 class="showtitle">The Amateur</h3>
+						<p class="showauthoer">Edward Klein</p>
+						<p>
+							<span class="showpgs">Pages: 254</span>
+							<span class="p_space"> / </span>
+							<span class="showrating">Rating: 7</span>
+						</p>
+					</li>
+					<li data-theme="c" class="resultli">
+						<img src="images/Book.png"/ class="showimg">
+						<h3 class="showtitle">The Columbus Affair</h3>
+						<p class="showauthoer">Steve Berry</p>
+						<p>
+							<span class="showpgs">Pages: 412</span>
+							<span class="p_space"> / </span>
+							<span class="showrating">Rating: 5</span>
+						</p>
+					</li>
+				</ul>
+			</div>
+			<!-- Footer -->
+			<div data-role="footer" data-id="footer" data-position="fixed" data-theme="d" data-tap-toggle="false" id="nav_footer">
+				<div data-role="navbar" data-position="fixed" data-tap-toggle="false" id="navbar">
+					<ul>
+						<li><a href="#home" data-transition="slide" data-direction="reverse">Home</a></li>
+						<li><a href="#add" data-transition="slideup">Add New</a></li>
+						<li><a href="#view" data-transition="slideup">View All</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 		<!-- JavaScript Links -->
 		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>

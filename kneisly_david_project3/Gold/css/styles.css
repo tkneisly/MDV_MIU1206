@@ -12,6 +12,9 @@
 	-webkit-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 	box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 }
+.ui-corner-bottom ui-content ui-body-c {
+	margin-top: -40px;
+}
 h1 {
 	/* Font for .ui-header */
 	font-family: Helvetica;
@@ -89,26 +92,6 @@ p.banner {
 	background-position-y: 30px;
 	background-color: #9a9a9a;
 }
-/*
-#ctatext {
-	color: white;
-	font-size: 14px;
-	text-shadow: 1px 1px 1px black;
-	line-height: 11px;
-	text-align: center;
-	margin-top: 40px;
-	margin-bottom: -5px;
-}
-#bbuttontext {
-	color: black;
-	font-size: 14px;
-	text-shadow: 1px 1px 1px white;
-	line-height: 11px;
-	text-align: center;
-	margin-top: -5px;
-	margin-bottom: 30px;
-}
-*/
 #bbuttontext {
 	font-size: 14px;
 	font-weight: bold;
@@ -121,16 +104,6 @@ p.banner {
 	/* Additional margin style for .browse on #home */
 	margin-top: 40px;
 }
-/*
-.ui-listview {
-	position: relative;
-	padding: 5px 5px 5px 5px;
-	border-radius: 6px;
-	border: none;
-	background: rgba(255,255,255,0);
-	border: 1px solid #fff;
-}
-*/
 .ui-li-divider {
 	/* jQuery li element for dividing (or heading) li's in a ul */
 	border: none;
@@ -163,6 +136,10 @@ p.banner {
 	-webkit-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 	box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 }
+.results {
+	/* Lists or content inside of the "content" data-role */
+	background: #ebedf2;
+}
 .sourcelist {
 	/* Lists or content inside of the "content" data-role */
 	border: none;
@@ -187,6 +164,10 @@ p.banner {
 	margin-top: 5px;
 	margin-bottom: 20px;
 }
+.p_space {
+	color: #d1d1d1;
+	font-weight: bold;
+}
 li {
 	box-shadow: 0 8px 1em rgba(0, 0, 0, .5);
 }
@@ -195,7 +176,11 @@ li {
 	margin: 0px;
 	border-bottom: none !important;
 }
-#navbar {
+#groups_menu.ui-btn-active {
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#9c1c1f), color-stop(1, #b91d22) ) !important;
+	background: -moz-linear-gradient( center bottom, #9c1c1f 0%, #b91d22 100% ) !important;
+}
+.navbar {
 	/* Global navbar in app footer */
 	-moz-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 	-webkit-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
@@ -206,6 +191,7 @@ li {
 .resref {
 	color: white !important;
 	outline: none !important;
+	text-shadow: black;
 }
 .ui-btn-active {
 	/* Global style for jQuery active buttons */
@@ -215,8 +201,56 @@ li {
 	border: 1px solid #fff;
 	text-shadow: none;
 }
-#resultlist {
-	margin-bottom: 40px;
+.ui-datebox-container .ui-header {
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#9c1c1f), color-stop(1, #b91d22) ) !important;
+	background: -moz-linear-gradient( center bottom, #9c1c1f 0%, #b91d22 100% ) !important;
+}
+.ui-datebox-container h1 {
+	color: white;
+	text-shadow: none;
+}
+#geterrors .ui-btn-left {
+	display: none !important;
+}
+#geterrors .ui-header {
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#9c1c1f), color-stop(1, #b91d22) ) !important;
+	background: -moz-linear-gradient( center bottom, #9c1c1f 0%, #b91d22 100% ) !important;
+}
+
+#geterrors .ui-content {
+	background-color: #ebedf2;
+	font-family: Helvetica;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 30px;
+	color: #1c1601;
+}
+#geterrors ul li {
+	background: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	list-style-type: none;
+}
+#geterrors h1 {
+	color: white;
+	text-shadow: none;
+	margin-right: 20%;
+	margin-left: 20%;
+}
+label.error {
+	display: block;
+	margin: 10px 0;
+	color: #cc0000;
+}
+.errorli {
+	font-weight: 100;
+}
+div.ui-controlgroup-label {
+	display: none !important;
+}
+#errorslink {
+	display: none;
 }
 /*
 nav {

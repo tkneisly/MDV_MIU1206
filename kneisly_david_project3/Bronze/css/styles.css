@@ -3,7 +3,7 @@
  * David Tyler Kneisly 
  * MUI 1206
  * Book Tracker
- * Bronze Style Sheet
+ * Gold Style Sheet
  */
  
 .ui-header {
@@ -186,6 +186,11 @@ p.banner {
 	text-shadow: none;
 	margin-top: 5px;
 	margin-bottom: 20px;
+}
+.p_space {
+	color: #d1d1d1;
+	font-weight: bold;
+	
 }
 li {
 	box-shadow: 0 8px 1em rgba(0, 0, 0, .5);

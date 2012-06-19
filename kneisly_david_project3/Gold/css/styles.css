@@ -1,5 +1,5 @@
 /*
- * Week 3, Project 3 
+ * Week 4, Project 4 
  * David Tyler Kneisly 
  * MUI 1206
  * Book Tracker
@@ -129,12 +129,12 @@ p.banner {
 	/* Background, padding, and margins for "content" data-role */
 	border: none;
 	padding-bottom: 40px;
-	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#c0c0c0), color-stop(1, #ebedf2) );
-	background: -moz-linear-gradient( center bottom, #c0c0c0 0%, #cdcdcd 100% );
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#c0c0c0), color-stop(1, #ebedf2) ) ;
+	background: -moz-linear-gradient( center bottom, #c0c0c0 0%, #cdcdcd 100% ) ;
 	border: 1px solid #fff;
-	-moz-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
-	-webkit-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
-	box-shadow: 0 0 1em rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0 0 1em rgba(0, 0, 0, .5) ;
+	-webkit-box-shadow: 0 0 1em rgba(0, 0, 0, .5) ;
+	box-shadow: 0 0 1em rgba(0, 0, 0, .5) ;
 }
 .results {
 	/* Lists or content inside of the "content" data-role */
@@ -209,6 +209,11 @@ li {
 	color: white;
 	text-shadow: none;
 }
+#geterrors {
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#5a5a5a), color-stop(1, #808080) ) !important;
+	background: -moz-linear-gradient( center bottom, #5a5a5a 0%, #808080 100% ) !important;
+	padding-bottom: 70px !important;
+}
 #geterrors .ui-btn-left {
 	display: none !important;
 }
@@ -251,6 +256,31 @@ div.ui-controlgroup-label {
 }
 #errorslink {
 	display: none;
+}
+#notify {
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: center;
+	color: black;
+	text-shadow: 1px 1px 1px white;
+	font-size: 13px;
+}
+.reqlabel {
+	display: inline !important;
+}
+#fieldreset > .ui-submit {
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#9c1c1f), color-stop(1, #b91d22) ) !important;
+	background: -moz-linear-gradient( center bottom, #9c1c1f 0%, #b91d22 100% ) !important;
+	color: white;
+	text-shadow: 1px 1px 1px black;
+}
+.blocklabel {
+	display: block;
+}
+.formslider .ui-slider-switch {
+	width: 100%;
 }
 /*
 nav {

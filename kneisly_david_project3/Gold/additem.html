@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Week 3, Project 3 -->
+<!-- Week 4, Project 4 -->
 <!-- David Tyler Kneisly -->
 <!-- MUI 1206 -->
 <!-- Book Tracker -->
@@ -21,108 +21,124 @@
 		<!-- Mobile IE needs ClearType for smoothing fonts -->
 		<meta http-equiv="cleartype" content="on">
 		<!-- Stylesheet Links -->
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
-		<link rel="stylesheet" href="css/styles.css" />
-		<!-- Modernizr Link -->
+		<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
+		<link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" /> 
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
 		<script src="js/libs/modernizr.custom.min.js"></script>
 	</head>
 	
-	
 	<!-- Document Body -->
 	<body>
-		<!-- Start of #Genres 'Single-Page Drill-Down' -->
-		<div data-role="page" id="addItem" class="browser" style="background-image:url(images/banner.png)">
-			<!-- Header -->
-			<div data-role="header" data-id="header" data-theme="c" data-position="fixed" data-tap-toggle="false" id="header">
-				<h1>Book Tracker</h1>
-			</div>
-			<!-- Page Content "CTA" -->
-			<div data-role="content" data-id="cta" id="cta">
-				<a href="index.html" data-rel="back" class="featurestack">
+		<!-- Start of #addItem 'Single-Page Drill-Down' -->
+			<div data-role="page" id="addItem" class="browser" style="background-image:url(images/banner.png)">
+				<!-- Header -->
+				<div data-role="header" data-id="header" data-position="fixed" data-theme="c" data-tap-toggle="false" data-add-back-btn="true" class="header">
+					<h1>Book Tracker</h1>
+				</div>
+				<!-- Page Content "CTA" -->
+				<div data-role="content" data-id="cta" class="cta">
+					<a href="index.html" data-transition="slideup" data-direction="reverse" class="featurestack">
+						<div>
+							<p class="banner">Add a Book</p>
+							<h6>or click here to go home</h6>
+						</div>
+					</a>
+				</div>
+				<!-- 'Add Item' Form -->
+				<div data-role="content" class="body results">
+					<!-- Start of the Form -->
 					<div>
-						<p class="banner">Add a Book</p>
-						<h6>or click here to go home</h6>
+						<p id="notify">*required fields</p>
+						<form action="#addItem" method="post" id="addbookform">
+							<!-- Pick a Group / Type -->
+							<div data-role="fieldcontain">
+								<label for="groups">Media type</label>
+								<select name="groups" id="groups" data-native-menu="false" >
+									<option data-placeholder="true" >Pick one</option>
+									<option value="Book" class="option_btn" >Book</option>
+									<option value="EReader" class="option_btn" >E-Reader</option>
+									<option value="Tablet" class="option_btn" >Tablet</option>
+									<option value="Online" class="option_btn" >Online</option>
+								</select>
+							</div>
+							<!-- Enter the Title -->
+							<div data-role="fieldcontain">
+								<span>*<label for="booktitle" class="reqlabel">Title</label></span>
+								<input type="text" name="booktitle" id="booktitle" placeholder="The Great Gatsby" class="required" />
+							</div>
+							<!-- Enter the Author -->
+							<div data-role="fieldcontain">
+								<span>*<label for="author" class="reqlabel">Author</label></span>
+								<input type="text" name="author" id="author" placeholder="F. Scott Fitzgerald" class="required" />
+							</div>
+							<!-- Enter the Number of Pages -->
+							<div data-role="fieldcontain">
+								<span>*<label for="pages" class="reqlabel">Pages</label></span>
+								<input type="number" name="pages" id="pages" placeholder="180" class="required number" />
+							</div>
+							<!-- Enter the Finished-by Date -->
+							<div data-role="fieldcontain">
+								<label for="date">Date Finished</label>
+								<input type="date" name="date" id="date" placeholder="06/01/2012" data-role="datebox" data-options='{"mode": "calbox"}' />
+							</div>
+							<!-- Enter Range for Rating -->
+							<div data-role="fieldcontain">
+								<label for="rating" class="blocklabel">How fun was the book?</label>
+								<input type="range" name="rating" id="rating" value="5" min="0" max="10" />
+							</div>
+							<!-- Select Radio for Genre -->
+							<div data-role="fieldcontain">
+								<fieldset data-role="controlgroup" name="genre" id="genre">
+								<span>*<label for="genre" class="reqlabel">What was the genre?</label></span>
+									<legend>Genre</legend>
+									<input type="radio" value="Science-Fiction" name="genre" id="Science-Fiction" class="required" />
+									<label for="Science-Fiction">Science-Fiction</label>
+									<input type="radio" value="Fantasy" name="genre" id="Fantasy" />
+									<label for="Fantasy">Fantasy</label>
+									<input type="radio" value="Thriller" name="genre" id="Thriller" />
+									<label for="Thriller">Thriller</label>
+									<input type="radio" value="Classic" name="genre" id="Classic" />
+									<label for="Classic">Classic</label>
+									<input type="radio" value="Periodical" name="genre" id="Periodical" />
+									<label for="Periodical">Periodical</label>
+									<input type="radio" value="Non-Fiction" name="genre" id="Non-Fiction" />
+									<label for="Non-Fiction">Non-Fiction</label>
+								</fieldset>
+							</div>
+							<!-- Select Favorite Checkbox -->
+							<div data-role="fieldcontain" class="formslider">
+								<label for="slider" class="blocklabel">Add to your favorites?</label>
+								<select data-role="slider" id="slider" data-inline="false" >
+									<option value="off">Not a favorite</option>
+									<option value="on">Added to favorites</option>
+								</select>
+							</div>
+							<!-- Notes Area -->
+							<div data-role="fieldcontain">
+								<label for="notes">Notes</label>
+								<textarea></textarea>
+							</div>
+							
+							<div data-role="fieldcontain" id="fieldsubmit">
+								<input type="submit" value="Save your book" id="submit" data-theme="a"/>
+							</div>
+							<div data-role="fieldcontain" id="fieldreset">
+								<input type="reset" value="Reset the form" id="reset" />
+							</div>
+							
+							<a href="#geterrors" id="errorslink" data-rel="dialog" data-transition="pop">Open Errors</a>
+						</form>
 					</div>
-				</a>
-			</div>
-			<!-- 'Add Item' Form -->
-			<div data-role="content" class="body results">
-				<!-- Start of the Form -->
-				<div>
-					<form action=" " method="post" id="addbookform">
-						<!-- Pick a Group / Type -->
-						<div data-role="fieldcontain">
-							<label for="groups">*What media type was this?</label>
-							<select name="groups" id="groups" data-native-menu="false" class="required">
-								<option data-placeholder="true">Pick one</option>
-								<option value="Book" data-theme="a">Book</option>
-								<option value="EReader">E-Reader</option>
-								<option value="Tablet">Tablet</option>
-								<option value="Online">Online</option>
-							</select>
-						</div>
-						<!-- Enter the Title -->
-						<div data-role="fieldcontain">
-							<label for="booktitle">*Title</label>
-							<input type="text" name="booktitle" id="booktitle" placeholder="The Great Gatsby" class="required" />
-						</div>
-						<!-- Enter the Author -->
-						<div data-role="fieldcontain">
-							<label for="author">*Author</label>
-							<input type="text" name="author" id="author" placeholder="F. Scott Fitzgerald" class="required" />
-						</div>
-						<!-- Enter the Number of Pages -->
-						<div data-role="fieldcontain">
-							<label for="pages">*Number of pages</label>
-							<input type="number" name="pages" id="pages" placeholder="180" class="required number" />
-						</div>
-						<!-- Enter the Finished-by Date -->
-						<div data-role="fieldcontain">
-							<label for="date">*Date Finished</label>
-							<input type="date" name="date" id="date" class="required date" />
-						</div>
-						<!-- Enter Range for Rating -->
-						<div data-role="fieldcontain">
-							<label for="rating">How fun was the book?</label>
-							<input type="range" name="rating" id="rating" value="5" min="0" max="10" />
-						</div>
-						<!-- Select Radio for Genre -->
-						<div data-role="fieldcontain">
-							<fieldset data-role="controlgroup">
-								<legend>What was the genre?</legend>
-								<input type="radio" value="Science-Fiction" name="genre" id="Science-Fiction" class="required" />
-								<label for="Science-Fiction">Science-Fiction</label>
-								<input type="radio" value="Fantasy" name="genre" id="Fantasy" />
-								<label for="Fantasy">Fantasy</label>
-								<input type="radio" value="Thriller" name="genre" id="Thriller" />
-								<label for="Thriller">Thriller</label>
-								<input type="radio" value="Classic" name="genre" id="Classic" />
-								<label for="Classic">Classic</label>
-								<input type="radio" value="Periodical" name="genre" id="Periodical" />
-								<label for="Periodical">Periodical</label>
-								<input type="radio" value="Non-Fiction" name="genre" id="Non-Fiction" />
-								<label for="Non-Fiction">Non-Fiction</label>
-							</fieldset>
-						</div>
-						<!-- Select Favorite Checkbox -->
-						<div data-role="fieldcontain">
-							<label for="favorite">Add to your favorites?</label>
-							<select data-role="slider" id="slider">
-								<option value="off">No</option>
-								<option value="on">Yes</option>
-							</select>
-						</div>
-						<!-- Notes Area -->
-						<div data-role="fieldcontain">
-							<label for="notes">Notes</label>
-							<textarea></textarea>
-						</div>
-						
-						<input type="reset" value="Reset the form" id="reset" />
-						<input type="submit" value="Save your book!" />
-						
-						<a href="#geterrors" id="errorslink" data-rel="dialog" data-transition="pop">Open Errors</a>
-					</form>
+				</div>
+				<!-- Footer -->
+				<div data-role="footer" data-id="footer" data-position="fixed" data-theme="d" data-tap-toggle="false" class="nav_footer" id="nav_footer_additem">
+					<div data-role="navbar" data-position="fixed" data-tap-toggle="false" class="navbar" id="navbar_additems">
+						<ul>
+							<li><a href="index.html" data-transition="slideup" data-direction="reverse">Home</a></li>
+							<li><a href="#reset" >Clear Form</a></li>
+							<li><a href="#view" data-transition="slideup">View All</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!-- Form Validation Pop-up -->
@@ -136,23 +152,23 @@
 					<ul>
 						<li>This will be replaced on actual validation.</li>
 					</ul>
-				</div>
-			</div>
-			<!-- Footer -->
-			<div data-role="footer" data-id="footer" data-position="fixed" data-theme="d" data-tap-toggle="false" id="nav_footer">
-				<div data-role="navbar" data-position="fixed" data-tap-toggle="false" id="navbar">
-					<ul>
-						<li><a href="index.html" data-transition="slideup" data-direction="reverse">Home</a></li>
-						<li><a href="#clear">Clear Form</a></li>
-						<li><a href="#view" data-transition="slideup">View All</a></li>
-					</ul>
+					<a href="#addItem" data-role="button" data-mini="true">Ok, I'll fix it!</a>
 				</div>
 			</div>
 		</div>
 		<!-- JavaScript Links -->
-		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script> 
+		<script type="text/javascript" src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+		<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.core.min.js"></script>
+		<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.calbox.min.js"></script>
+		<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en_US.utf8.js"></script>
 		<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
+	<!-- Image References & Sources -->
+		<!-- Original source for Book image: http://www.glossyicon.com/wp-content/uploads/2009/05/old-book.jpg -->
+		<!-- Original source for Tablet image: http://www.webdesignhot.com/wp-content/uploads/2011/10/Vector-Apple-iPad-2-Preview-2.jpg -->
+		<!-- Original source for EReader image:  http://psdlist.com/gadget/443/amazon-kindle-psd-file.html -->
+		<!-- Original source for Online image:  http://mob-arts.com/blog/wp-content/uploads/2010/03/100313_iMac.jpg -->
+<!-- End of Document -->
 </html>

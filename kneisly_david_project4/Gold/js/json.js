@@ -7,7 +7,7 @@ var json = {
 	"book01": {
 		"groups": ["Group:","Tablet"],
 		"titles": ["Title:", "Once Upon a Mattress"],
-		"authors": ["Author:", "Thompson, Jay"],
+		"authors": ["Author:", "Jay Thompson"],
 		"readpages": ["Pages:", "1959"],
 		"datefinished": ["Date Finished:", "2008-06-20"],
 		"rating": ["Rating:", "8"],
@@ -18,7 +18,7 @@ var json = {
 	"book02": {
 		"groups": ["Group:","Book"],
 		"titles": ["Title:", "Clementine's Decent"],
-		"authors": ["Author:", "Darling, Obi"],
+		"authors": ["Author:", "Obi Darlin"],
 		"readpages": ["Pages:", "1849"],
 		"datefinished": ["Date Finished:", "2012-03-22"],
 		"rating": ["Rating:", "6"],
@@ -29,7 +29,7 @@ var json = {
 	"book03": {
 		"groups": ["Group:", "EReader"],
 		"titles": ["Title", "Thinking Fourth Dimensionally"],
-		"authors": ["Author:", "Brown, Emmett"],
+		"authors": ["Author:", "Emmett Brown"],
 		"readpages": ["Pages:", "121"],
 		"datefinished": ["Date Finished:", "1985-11-05"],
 		"rating": ["Rating:", "10"],
@@ -40,7 +40,7 @@ var json = {
 	"book04": {
 		"groups": ["Group:", "EReader"],
 		"titles": ["Title", "The Book Case"],
-		"authors": ["Author:", "DeMille, Nelson"],
+		"authors": ["Author:", "Nelson DeMille"],
 		"readpages": ["Pages:", "378"],
 		"datefinished": ["Date Finished:", "2012-05-08"],
 		"rating": ["Rating:", "4"],
@@ -51,7 +51,7 @@ var json = {
 	"book05": {
 		"groups": ["Group:", "EReader"],
 		"titles": ["Title", "Snatched"],
-		"authors": ["Author:", "Slaughter, Karin"],
+		"authors": ["Author:", "Karin Slaughter"],
 		"readpages": ["Pages:", "238"],
 		"datefinished": ["Date Finished:", "2012-05-14"],
 		"rating": ["Rating:", "2"],
@@ -62,7 +62,7 @@ var json = {
 	"book06": {
 		"groups": ["Group:", "Tablet"],
 		"titles": ["Title", "Stolen Prey"],
-		"authors": ["Author:", "Sandford, John"],
+		"authors": ["Author:", "John Sandford"],
 		"readpages": ["Pages:", "164"],
 		"datefinished": ["Date Finished:", "2012-05-15"],
 		"rating": ["Rating:", "5"],
@@ -73,7 +73,7 @@ var json = {
 	"book07": {
 		"groups": ["Group:", "Online"],
 		"titles": ["Title", "The Long Way Home"],
-		"authors": ["Author:", "McQuestion, Karen"],
+		"authors": ["Author:", "Karen McQuestion"],
 		"readpages": ["Pages:", "242"],
 		"datefinished": ["Date Finished:", "2012-05-01"],
 		"rating": ["Rating:", "5"],
@@ -84,7 +84,7 @@ var json = {
 	"book08": {
 		"groups": ["Group:", "EReader"],
 		"titles": ["Title", "The Amateur"],
-		"authors": ["Author:", "Klein, Edward"],
+		"authors": ["Author:", "Edward Klein"],
 		"readpages": ["Pages:", "254"],
 		"datefinished": ["Date Finished:", "2012-05-14"],
 		"rating": ["Rating:", "7"],
@@ -95,7 +95,7 @@ var json = {
 	"book09": {
 		"groups": ["Group:", "Book"],
 		"titles": ["Title", "Insurgent (Divergent)"],
-		"authors": ["Author:", "Roth, Veronica"],
+		"authors": ["Author:", "Veronica Roth"],
 		"readpages": ["Pages:", "362"],
 		"datefinished": ["Date Finished:", "2012-05-01"],
 		"rating": ["Rating:", "7"],
@@ -106,7 +106,7 @@ var json = {
 	"book10": {
 		"groups": ["Group:", "Book"],
 		"titles": ["Title", "Gone Girl"],
-		"authors": ["Author:", "Flynn, Gillian"],
+		"authors": ["Author:", "Gillian Flynn"],
 		"readpages": ["Pages:", "355"],
 		"datefinished": ["Date Finished:", "2011-06-05"],
 		"rating": ["Rating:", "5"],
@@ -117,7 +117,7 @@ var json = {
 	"book11": {
 		"groups": ["Group:", "Tablet"],
 		"titles": ["Title", "The Serpent's Shadow"],
-		"authors": ["Author:", "Riordan, Rick"],
+		"authors": ["Author:", "Rick Riordan"],
 		"readpages": ["Pages:", "634"],
 		"datefinished": ["Date Finished:", "2012-05-01"],
 		"rating": ["Rating:", "8"],
@@ -128,7 +128,7 @@ var json = {
 	"book12": {
 		"groups": ["Group:", "EReader"],
 		"titles": ["Title", "In One Person"],
-		"authors": ["Author:", "Irving, John"],
+		"authors": ["Author:", "John Irving"],
 		"readpages": ["Pages:", "232"],
 		"datefinished": ["Date Finished:", "2012-05-08"],
 		"rating": ["Rating:", "3"],
@@ -139,7 +139,7 @@ var json = {
 	"book13": {
 		"groups": ["Group:", "Book"],
 		"titles": ["Title", "The Columbus Affair"],
-		"authors": ["Author:", "Berry, Steve"],
+		"authors": ["Author:", "Steve Berry"],
 		"readpages": ["Pages:", "412"],
 		"datefinished": ["Date Finished:", "2012-05-15"],
 		"rating": ["Rating:", "5"],
@@ -150,7 +150,7 @@ var json = {
 	"book14": {
 		"groups": ["Group:", "EReader"],
 		"titles": ["Title", "A Wanted Man"],
-		"authors": ["Author:", "Child, Lee"],
+		"authors": ["Author:", "Lee Child"],
 		"readpages": ["Pages:", "222"],
 		"datefinished": ["Date Finished:", "2011-09-11"],
 		"rating": ["Rating:", "6"],
@@ -161,7 +161,7 @@ var json = {
 	"book15": {
 		"groups": ["Group:", "Tablet"],
 		"titles": ["Title", "Bring Up the Bodies"],
-		"authors": ["Author:", "Mantel, Hilary"],
+		"authors": ["Author:", "Hilary Mantel"],
 		"readpages": ["Pages:", "322"],
 		"datefinished": ["Date Finished:", "2012-05-08"],
 		"rating": ["Rating:", "5"],
@@ -172,7 +172,7 @@ var json = {
 	"book16": {
 		"groups": ["Group:", "Online"],
 		"titles": ["Title", "The Enchantress"],
-		"authors": ["Author:", "Scott, Michael"],
+		"authors": ["Author:", "Michael Scott"],
 		"readpages": ["Pages:", "336"],
 		"datefinished": ["Date Finished:", "2012-05-22"],
 		"rating": ["Rating:", "7"],
@@ -183,7 +183,7 @@ var json = {
 	"book17": {
 		"groups": ["Group:", "EReader"],
 		"titles": ["Title", "Fearless"],
-		"authors": ["Author:", "Blehm, Eric"],
+		"authors": ["Author:", "Eric Blehm"],
 		"readpages": ["Pages:", "365"],
 		"datefinished": ["Date Finished:", "2012-05-22"],
 		"rating": ["Rating:", "6"],
@@ -194,7 +194,7 @@ var json = {
 	"book18": {
 		"groups": ["Group:", "Book"],
 		"titles": ["Title", "I Suck at Girls"],
-		"authors": ["Author:", "Halpern, Justin"],
+		"authors": ["Author:", "Justin Halpern"],
 		"readpages": ["Pages:", "226"],
 		"datefinished": ["Date Finished:", "2012-05-15"],
 		"rating": ["Rating:", "5"],
@@ -205,7 +205,7 @@ var json = {
 	"book19": {
 		"groups": ["Group:", "Tablet"],
 		"titles": ["Title", "Bloodman"],
-		"authors": ["Author:", "Pobi, Robert"],
+		"authors": ["Author:", "Robert Pobi"],
 		"readpages": ["Pages:", "121"],
 		"datefinished": ["Date Finished:", "2012-05-15"],
 		"rating": ["Rating:", "4"],
@@ -216,7 +216,7 @@ var json = {
 	"book20": {
 		"groups": ["Group:", "EReader"],
 		"titles": ["Title", "The Bourne Imperative"],
-		"authors": ["Author:", "Lustbader, Eric Van"],
+		"authors": ["Author:", "Eric Van Lustbader"],
 		"readpages": ["Pages:", "452"],
 		"datefinished": ["Date Finished:", "2011-06-05"],
 		"rating": ["Rating:", "6"],

@@ -1,35 +1,266 @@
 <!DOCTYPE html>
-<!-- Week 1, Project 1 -->
+<!-- Week 4, Project 4 -->
 <!-- David Tyler Kneisly -->
 <!-- MUI 1206 -->
 <!-- Book Tracker -->
+<!-- Gold Index.html -->
+
 <html lang="en">
 	<!-- HTML DOCUMENT HEADER -->
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="utf-8">
+		<title>David Kneisly:  Book Tracker</title>
+		<meta name="author" content="David Tyler Kneisly">
 		<meta name="description" content="index page for the Book Tracker web app project for VFW 1205." />
 		<meta name="keywords" content="html5, mobile development, Full Sail University, Reading, Read, Write, Novel, Book, Education, Authors, Genres, Tracker, Track" />
 		<meta name="robots" content="index, follow" />
-		<meta name="viewport" content="user-scalable=no, width=device-width" />
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="viewport" content="target-densitydpi=device-dpi" />
-		<meta name="HandHeldFriendly" content="True" />
-		<meta name="MobileOptimized" content="320" />
-		<meta name="author" content="David Tyler Kneisly" />
-		<title>David Kneisly:  Book Tracker</title>
-		<link href="css/styles.css" rel="stylesheet" type="text/css" />
+		<!-- Mobile IE needs ClearType for smoothing fonts -->
+		<meta http-equiv="cleartype" content="on">
+		<!-- Stylesheet Links -->
+		<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
+		<link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" /> 
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+		<script src="js/libs/modernizr.custom.min.js"></script>
 	</head>
+	
 	<!-- Document Body -->
 	<body>
-		<header>
-			<h1>Book Tracker</h1>
-		</header>
-		<div id="index">
-			<p>This web app will help you track the books you're reading.</p>
-			<h2>Let's Get Started!</h2>
+		<div>
+			<!-- Start of Home Page -->
+			<div data-role="page" id="home" style="background-image:url(images/ribbon.png)" >
+				<!-- Header -->
+				<div data-role="header" data-id="header" data-theme="c" data-position="fixed" data-tap-toggle="false" class="header">
+					<span class="header_wrapper"><img src="images/Header.png" alt="Book Tracker" /></span>
+				</div>
+				<!-- Page Content "CTA"-->
+				<div data-role="content" class="cta">
+					<a href="additem.html" class="featurestack" data-transition="slideup">
+						<div>
+							<p id="function">Get Started</p>
+							<h5>Click here to track a new book...</h5>
+							<span class="img_wrapper"><img id="logo" src="images/logo.png" alt="Logo"/></span>
+						</div>
+					</a>
+				</div>
+				<!-- Page Content "Browse Button" -->
+				<div data-role="content" class="body" id="homebrowse">
+					<p id="bbuttontext">...or click below to browse</p>
+					<a href="#BookType" data-role="button" data-transition="slide" id="brbutton">Browse your collection...</a>
+				</div>
+				<!-- Footer -->
+				<div data-role="footer" data-id="footer" data-position="fixed" data-theme="d" data-tap-toggle="false" class="nav_footer" id="nav_footer_home" >
+					<div data-role="navbar" data-position="fixed" data-tap-toggle="false" class="navbar" id="navbar_home" >
+						<ul>
+							<li><a href="#home" class="ui-btn-active">Home</a></li>
+							<li><a href="additem.html" data-transition="slideup">Add New</a></li>
+							<li><a href="#view" data-transition="slideup">View All</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- End of Home Page -->
+			<!-- Start of #BookType page "Single-Page Drill-Down" -->
+			<div data-role="page" id="BookType" class="browser" style="background-image:url(images/banner.png)">
+				<!-- Header -->
+				<div data-role="header" data-id="header" data-position="fixed" data-theme="c" data-tap-toggle="false" data-add-back-btn="true" class="header">
+					<span class="header_wrapper"><img src="images/Header.png" alt="Book Tracker" /></span>
+				</div>
+				<!-- Page Content "CTA" -->
+				<div data-role="content" data-id="cta" class="cta">
+					<a href="#home" data-rel="back" class="featurestack">
+						<div>
+							<p class="banner">Browse by Type</p>
+							<h6>or click here to go back</h6>
+						</div>
+					</a>
+				</div>
+				<!-- Page Content "Narrow Browse Results by Type" -->
+				<div data-role="content" class="body">
+					<ul class="browse" data-role="listview" data-inset="true" data-dividertheme="b">
+						<li data-role="list-divider" class="listheader">Begin by picking a type...</li>
+						<li data-theme="c" class="genreli"><a href="#Genres" data-transition="slide" id="aBook">Book</a></li>
+						<li data-theme="c" class="genreli"><a href="#Genres" data-transition="slide" id="aEReader">E-Reader</a></li>
+						<li data-theme="c" class="genreli"><a href="#Genres" data-transition="slide" id="aTablet">Tablet</a></li>
+						<li data-theme="c" class="genreli"><a href="#Genres" data-transition="slide" id="aOnline">Online</a></li>
+					</ul>
+				</div>
+				<!-- Footer -->
+				<div data-role="footer" data-id="footer" data-position="fixed" data-theme="d" data-tap-toggle="false" class="nav_footer" id="nav_footer_booktype">
+					<div data-role="navbar" data-position="fixed" data-tap-toggle="false" class="navbar" id="navbar_booktype">
+						<ul>
+							<li><a href="#home" data-transition="slide" data-direction="reverse">Home</a></li>
+							<li><a href="additem.html" data-transition="slideup">Add New</a></li>
+							<li><a href="#view" data-transition="slideup">View All</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- End of #BookType page -->
+			<!-- Start of #Genres 'Single-Page Drill-Down' -->
+			<div data-role="page" id="Genres" class="browser" style="background-image:url(images/banner.png)">
+				<!-- Header -->
+				<div data-role="header" data-id="header" data-position="fixed" data-theme="c" data-tap-toggle="false" data-add-back-btn="true" class="header">
+					<span class="header_wrapper"><img src="images/Header.png" alt="Book Tracker" /></span>
+				</div>
+				<!-- Page Content "CTA" -->
+				<div data-role="content" data-id="cta" class="cta">
+					<a href="#BookType" data-rel="back" class="featurestack">
+						<div>
+							<p class="banner">Browse by Genre</p>
+							<h6>or click here to go back</h6>
+						</div>
+					</a>
+				</div>
+				<!-- Page Content "Narrow Browse Results By Genre" -->
+				<div data-role="content" class="body">
+					<ul class="browse" data-role="listview" data-inset="true" data-dividertheme="b">
+						<li data-role="list-divider" class="listheader">Pick a genre...</li>
+						<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Science-Fiction</a></li>
+						<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Fantasy</a></li>
+						<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Thriller</a></li>
+						<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Classical</a></li>
+						<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Periodical</a></li>
+						<li data-theme="c" class="genreli"><a href="#Results" data-transition="slide">Non-Fiction</a></li>
+					</ul>
+				</div>			
+				<!-- Footer -->
+				<div data-role="footer" data-id="footer" data-position="fixed" data-theme="d" data-tap-toggle="false" class="nav_footer" id="nav_footer_genres">
+					<div data-role="navbar" data-position="fixed" data-tap-toggle="false" class="navbar" id="navbar_genres">
+						<ul>
+							<li><a href="#home" data-transition="slide" data-direction="reverse">Home</a></li>
+							<li><a href="additem.html" data-transition="slideup">Add New</a></li>
+							<li><a href="#view" data-transition="slideup">View All</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- End of #Genres page -->
+			<!-- Start of #Results 'Single-Page Drill-Down' -->
+			<div data-role="page" id="Results" class="browser" style="background-image:url(images/banner.png)">
+				<!-- Header -->
+				<div data-role="header" data-id="header" data-position="fixed" data-theme="c" data-tap-toggle="false" data-add-back-btn="true" class="header">
+					<span class="header_wrapper"><img src="images/Header.png" alt="Book Tracker" /></span>
+				</div>
+				<!-- Page Content "CTA" -->
+				<div data-role="content" data-id="cta" class="cta">
+					<a href="#Genres" data-rel="back" class="featurestack">
+						<div>
+							<p class="banner">Results</p>
+							<h6>or click here to go back</h6>
+						</div>
+					</a>
+				</div>
+				<!-- Page Content "View and Search Browse Results" -->
+				<div data-role="content" class="body">
+					<ul class="browse" data-role="listview" data-dividertheme="b" data-filter="true" id="resultlist">
+						<!-- List divider/header with dynamic links -->
+						<li data-role="list-divider" class="listheader" id="showbrwstype">
+							<span>Viewing:</span>
+							<span><a href="#BookType" class="resref" id="typeref">Books</a></span>
+							<span><a href="#Genres" class="resref" id="genreref">Science-Fiction</a></span>
+						</li>
+						<li data-theme="c" class="resultli">
+							<img src="images/Book.png" class="showimg" alt="Book" />
+							<h3 class="showtitle">Thinking Fourth Dimensionally</h3>
+							<p>
+								<span class="showauthoer">Emmett Brown</span>
+								<span class="p_space"> | </span>
+								<span class="showpgs">Pages: 180</span>
+							</p>
+							<p>
+								<span class="showrating">Rating: 10</span>
+								<span class="p_space"> | </span>
+								<span class="showdate">Read: 2011-11-12</span>
+							</p>
+						</li>
+						<li data-theme="c" class="resultli">
+							<img src="images/Book.png" class="showimg" alt="Book" />
+							<h3 class="showtitle">Insurgent (Divergent)</h3>
+							<p>
+								<span class="showauthoer">Veronica Roth</span>
+								<span class="p_space"> | </span>
+								<span class="showpgs">Pages: 362</span>
+							</p>
+							<p>
+								<span class="showrating">Rating: 7</span>
+								<span class="p_space"> | </span>
+								<span class="showdate">Read: 2011-11-12</span>
+							</p>
+						</li>
+						<li data-theme="c" class="resultli">
+							<img src="images/Book.png" class="showimg" alt="Book" />
+							<h3 class="showtitle">Gone Girl</h3>
+							<p>
+								<span class="showauthoer">Gillian Flynn</span>
+								<span class="p_space"> | </span>
+								<span class="showpgs">Pages: 355</span>
+							</p>
+							<p>
+								<span class="showrating">Rating: 5</span>
+								<span class="p_space"> | </span>
+								<span class="showdate">Read: 2011-11-12</span>
+							</p>
+						</li>
+						<li data-theme="c" class="resultli">
+							<img src="images/Book.png" class="showimg" alt="Book" />
+							<h3 class="showtitle">The Amateur</h3>
+							<p>
+								<span class="showauthoer">Edward Klein</span>
+								<span class="p_space"> | </span>
+								<span class="showpgs">Pages: 254</span>
+							</p>
+							<p>
+								<span class="showrating">Rating: 7</span>
+								<span class="p_space"> | </span>
+								<span class="showdate">Read: 2011-11-12</span>
+							</p>
+						</li>
+						<li data-theme="c" class="resultli">
+							<img src="images/Book.png" class="showimg" alt="Book" />
+							<h3 class="showtitle">The Columbus Affair</h3>
+							<p>
+								<span class="showauthoer">Steve Berry</span>
+								<span class="p_space"> | </span>
+								<span class="showpgs">Pages: 412</span>
+							</p>
+							<p>
+								<span class="showrating">Rating: 5</span>
+								<span class="p_space"> | </span>
+								<span class="showdate">Read: 2011-11-12</span>
+							</p>
+						</li>
+					</ul>
+				</div>
+				<!-- Footer -->
+				<div data-role="footer" data-id="footer" data-position="fixed" data-theme="d" data-tap-toggle="false" class="nav_footer" id="nav_footer_results">
+					<div data-role="navbar" data-position="fixed" data-tap-toggle="false" class="navbar" id="navbar_results">
+						<ul>
+							<li><a href="#home" data-transition="slide" data-direction="reverse">Home</a></li>
+							<li><a href="additem.html" data-transition="slideup">Add New</a></li>
+							<li><a href="#view" data-transition="slideup">View All</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
-		<nav>
-			<a href="additem.html">Add a book!</a>
-		</nav>
-		<!--<script src="js/main.js" type="text/javascript"></script>-->
+		<!-- End of #Results page. -->
+		<!-- JavaScript Links -->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script> 
+		<script type="text/javascript" src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+		<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.core.min.js"></script>
+		<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.calbox.min.js"></script>
+		<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en_US.utf8.js"></script>
+		<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
 	</body>
+	<!-- Image References & Sources -->
+		<!-- Original source for Book image: http://www.glossyicon.com/wp-content/uploads/2009/05/old-book.jpg -->
+		<!-- Original source for Tablet image: http://www.webdesignhot.com/wp-content/uploads/2011/10/Vector-Apple-iPad-2-Preview-2.jpg -->
+		<!-- Original source for EReader image:  http://psdlist.com/gadget/443/amazon-kindle-psd-file.html -->
+		<!-- Original source for Online image:  http://mob-arts.com/blog/wp-content/uploads/2010/03/100313_iMac.jpg -->
+<!-- End of Document -->
 </html>

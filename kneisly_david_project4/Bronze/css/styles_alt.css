@@ -35,19 +35,28 @@ h1 {
     text-align: center;
     text-shadow: 1px 1px 1px #fff;
 }
+.ribbon {
+	/* Positions the background Ribbon and sets the background color */
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position-x: center;
+	background-position-y: 0px;
+	background-size: 100% 62%;
+	background-color: #9a9a9a;
+}
 nav {
     display: block;
     position: relative;
-    margin: 8px 5px 8px 5px;
-    padding: 5px 0 5px;
-    background-color: #ff8e33;
-    border: 1px solid #f79b50;
+    margin: 8px 0px 8px 0px;
+    padding: 0px 0 0px;
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#9c1c1f), color-stop(1, #b91d22) ) !important;
+	background: -moz-linear-gradient( center bottom, #9c1c1f 0%, #b91d22 100% ) !important;
     border-radius: 6px;
      -moz-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
     -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, .5);
     box-shadow: 0 0 1em rgba(0, 0, 0, .5);
     line-height: 30px;
-    color: #2a2a2a;
+    color: white;
     font-family: arial;
     font-size: 11px;
     letter-spacing: 1px;
@@ -65,13 +74,16 @@ a:hover {
     color: black;
 }
 #clear {
-    margin: 0 0 0 -10px;
+    margin: 0 0 0 5px;
+    color: white;
 }
 #display {
-    margin: 0 0 0 10px;
+    margin: 0 0 0 -5px;
+    color: white;
 }
 #addNew {
-    margin: 0 0 0 10px;
+    margin: 0 0 0 -5px;
+    color: white;
 }
 form {
     position: relative;

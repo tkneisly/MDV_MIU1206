@@ -13,13 +13,14 @@
 	box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 }
 .ui-corner-bottom ui-content ui-body-c {
-	margin-top: -40px;
+	margin-top: 0px;
 }
 h1 {
 	/* Font for .ui-header */
-	font-family: Helvetica;
-	font-size: 20px;
-	margin: 3px;
+	font-family: 'Rancho', cursive;
+	font-size: 24px !important;
+	margin-top: 3px !important;
+	margin-bottom: 3px !important;
 	color: #2a2a2a;
 	text-shadow: 1px 1px 1px #fff;
 }
@@ -46,7 +47,18 @@ h6 {
 p#function {
 	/* Global CTA font and positioning */
 	text-align: center;
-	font-family: Arial;
+	font-family: 'Rancho', cursive;
+	color: white;
+	font-size: 50px;
+	font-weight: lighter;
+	font-stretch: ultra-condensed;
+	text-shadow: 1px 1px 1px black;
+	margin: 0 0 0 0;
+}
+p.banner {
+	/* Sub-page CTA font and positioning */
+	text-align: center;
+	font-family: 'Rancho', cursive;
 	color: white;
 	font-size: 40px;
 	font-weight: lighter;
@@ -54,23 +66,12 @@ p#function {
 	text-shadow: 1px 1px 1px black;
 	margin: 0 0 0 0;
 }
-p.banner {
-	/* Global CTA font and positioning */
-	text-align: center;
-	font-family: Arial;
-	color: white;
-	font-size: 30px;
-	font-weight: lighter;
-	font-stretch: ultra-condensed;
-	text-shadow: 1px 1px 1px black;
-	margin: 0 0 0 0;
-}
-*.header_wrapper {
-	/* Span wrapper for app logo on #home */
-	display: block;
-	text-align: center !important;
-	margin-top: 5px;
-	margin-bottom: -11px;
+.header_img {
+	vertical-align: text-top !important;
+	overflow-y: visible !important;
+	position: absolute;
+	padding-top: 3px;
+	margin-left: 5px;
 }
 *.img_wrapper {
 	/* Span wrapper for app logo on #home */
@@ -83,18 +84,13 @@ p.banner {
 	text-decoration: none;
 	border-bottom: none !important;
 }
-.stage {
-    background: -moz-linear-gradient(0deg, #8d8d8d, #8d8d8d 2px, #9a9a9a 2px, #9a9a9a 4px, #8d8d8d 4px);
-    background: -webkit-linear-gradient(0deg, #8d8d8d, #8d8d8d 2px, #9a9a9a 2px, #9a9a9a 4px, #8d8d8d 4px);
-    background-repeat: repeat;
-    background-size: 5px 10px;
-}
 #home {
 	/* Positions the background Ribbon and sets the background color */
 	background-repeat: no-repeat;
-	background-attachment: absolute;
+	background-attachment: fixed;
 	background-position-x: center;
-	/*background-position-y: 10px;*/
+	background-position-y: 0px;
+	background-size: 100% 62%;
 	background-color: #9a9a9a;
 }
 .browser {
@@ -102,11 +98,13 @@ p.banner {
 	background-repeat: no-repeat;
 	background-attachment: absolute;
 	background-position-x: center;
-	background-position-y: 30px;
+	background-position-y: 38px;
+	background-size: 100%;
 	background-color: #9a9a9a;
 }
 #bbuttontext {
-	font-size: 14px;
+	font-family: 'Rancho', cursive;
+	font-size: 18px;
 	font-weight: bold;
 	line-height: 11px;
 	text-align: center;
@@ -115,7 +113,7 @@ p.banner {
 }
 #homebrowse {
 	/* Additional margin style for .browse on #home */
-	margin-top: 40px;
+	margin-bottom: 33px; /*Was 40px before changing h1 and the header*/
 }
 .ui-li-divider {
 	/* jQuery li element for dividing (or heading) li's in a ul */
@@ -219,19 +217,31 @@ li {
 	color: white;
 	text-shadow: none;
 }
-#geterrors {
+label {
+	display: block;
+}
+.userdialog {
 	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#5a5a5a), color-stop(1, #808080) ) !important;
 	background: -moz-linear-gradient( center bottom, #5a5a5a 0%, #808080 100% ) !important;
-	padding-bottom: 70px !important;
+	background-size: 100% 640px !important;
 }
-#geterrors .ui-btn-left {
+.userdialog .ui-btn-left {
 	display: none !important;
 }
-#geterrors .ui-header {
+.userdialog h1 {
+	color: white;
+	text-shadow: none;
+	margin-right: 1% !important;
+	margin-left: 1% !important;
+}
+.userdialog p {
+	text-align: center;
+}
+.userdialog .ui-header {
 	background: -webkit-gradient( linear, left bottom, left top, color-stop(0,#9c1c1f), color-stop(1, #b91d22) ) !important;
 	background: -moz-linear-gradient( center bottom, #9c1c1f 0%, #b91d22 100% ) !important;
 }
-#geterrors .ui-content {
+.userdialog .ui-content {
 	background-color: #ebedf2;
 	font-family: Helvetica;
 	font-size: 16px;
@@ -239,18 +249,12 @@ li {
 	line-height: 30px;
 	color: #1c1601;
 }
-#geterrors ul li {
+.userdialog ul li {
 	background: none;
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	list-style-type: none;
-}
-#geterrors h1 {
-	color: white;
-	text-shadow: none;
-	margin-right: 20%;
-	margin-left: 20%;
 }
 label.error {
 	display: block;
@@ -263,7 +267,7 @@ label.error {
 div.ui-controlgroup-label {
 	display: none !important;
 }
-#errorslink {
+#errorslink, #submittedlink, #clearall {
 	display: none;
 }
 #notify {

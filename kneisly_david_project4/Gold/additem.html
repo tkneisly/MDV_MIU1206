@@ -11,7 +11,7 @@
 		<meta charset="utf-8">
 		<title>David Kneisly:  Book Tracker</title>
 		<meta name="author" content="David Tyler Kneisly">
-		<meta name="description" content="index page for the Book Tracker web app project for VFW 1205." />
+		<meta name="description" content="index page for the Book Tracker web app." />
 		<meta name="keywords" content="html5, mobile development, Full Sail University, Reading, Read, Write, Novel, Book, Education, Authors, Genres, Tracker, Track" />
 		<meta name="robots" content="index, follow" />
 		<meta name="HandheldFriendly" content="True">
@@ -23,6 +23,7 @@
 		<!-- Stylesheet Links -->
 		<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
 		<link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" /> 
+		<link rel='stylesheet' type='text/css' href="http://fonts.googleapis.com/css?family=Economica|Yesteryear|Rancho" />
 		<link rel="stylesheet" type="text/css" href="css/styles.css" />
 		<script src="js/libs/modernizr.custom.min.js"></script>
 	</head>
@@ -30,130 +31,148 @@
 	<!-- Document Body -->
 	<body>
 		<!-- Start of #addItem 'Single-Page Drill-Down' -->
-			<div data-role="page" id="addItem" class="browser" style="background-image:url(images/banner.png)">
-				<!-- Header -->
-				<div data-role="header" data-id="header" data-position="fixed" data-theme="c" data-tap-toggle="false" data-add-back-btn="true" class="header">
-					<span class="header_wrapper"><img src="images/Header.png" alt="Book Tracker" /></span>
-				</div>
-				<!-- Page Content "CTA" -->
-				<div data-role="content" data-id="cta" class="cta">
-					<a href="index.html" data-transition="slideup" data-direction="reverse" class="featurestack">
-						<div>
-							<p class="banner">Add a Book</p>
-							<h6>or click here to go home</h6>
-						</div>
-					</a>
-				</div>
-				<!-- 'Add Item' Form -->
-				<div data-role="content" class="body results">
-					<!-- Start of the Form -->
+		<div data-role="page" id="addItem" class="browser" style="background-image:url(images/banner.png)">
+			<!-- Header -->
+			<div data-role="header" data-id="header" data-theme="c" data-position="fixed" data-tap-toggle="false" class="header">
+				<h1>Book Tracker<img src="images/Header_xs.png" alt="Book Tracker" class="header_img"/></h1>
+			</div>
+			<!-- Page Content "CTA" -->
+			<div data-role="content" data-id="cta" class="cta">
+				<a href="index.html" data-transition="slideup" data-direction="reverse" class="featurestack">
 					<div>
-						<p id="notify">*required fields</p>
-						<form action="#addItem" method="post" id="addbookform">
-							<!-- Pick a Group / Type -->
-							<div data-role="fieldcontain">
-								<label for="groups">Media type</label>
-								<select name="groups" id="groups" data-native-menu="false" >
-									<option data-placeholder="true" >Pick one</option>
-									<option value="Book" class="option_btn" >Book</option>
-									<option value="EReader" class="option_btn" >E-Reader</option>
-									<option value="Tablet" class="option_btn" >Tablet</option>
-									<option value="Online" class="option_btn" >Online</option>
-								</select>
-							</div>
-							<!-- Enter the Title -->
-							<div data-role="fieldcontain">
-								<span>*<label for="booktitle" class="reqlabel">Title</label></span>
-								<input type="text" name="booktitle" id="booktitle" placeholder="The Great Gatsby" class="required" />
-							</div>
-							<!-- Enter the Author -->
-							<div data-role="fieldcontain">
-								<span>*<label for="author" class="reqlabel">Author</label></span>
-								<input type="text" name="author" id="author" placeholder="F. Scott Fitzgerald" class="required" />
-							</div>
-							<!-- Enter the Number of Pages -->
-							<div data-role="fieldcontain">
-								<span>*<label for="pages" class="reqlabel">Pages</label></span>
-								<input type="number" name="pages" id="pages" placeholder="180" class="required number" />
-							</div>
-							<!-- Enter the Finished-by Date -->
-							<div data-role="fieldcontain">
-								<label for="date">Date Finished</label>
-								<input type="date" name="date" id="date" placeholder="06/01/2012" data-role="datebox" data-options='{"mode": "calbox"}' />
-							</div>
-							<!-- Enter Range for Rating -->
-							<div data-role="fieldcontain">
-								<label for="rating" class="blocklabel">How fun was the book?</label>
-								<input type="range" name="rating" id="rating" value="5" min="0" max="10" />
-							</div>
-							<!-- Select Radio for Genre -->
-							<div data-role="fieldcontain">
-								<fieldset data-role="controlgroup" name="genre" id="genre">
-								<span>*<label for="genre" class="reqlabel">What was the genre?</label></span>
-									<legend>Genre</legend>
-									<input type="radio" value="Science-Fiction" name="genre" id="Science-Fiction" class="required" />
-									<label for="Science-Fiction">Science-Fiction</label>
-									<input type="radio" value="Fantasy" name="genre" id="Fantasy" />
-									<label for="Fantasy">Fantasy</label>
-									<input type="radio" value="Thriller" name="genre" id="Thriller" />
-									<label for="Thriller">Thriller</label>
-									<input type="radio" value="Classic" name="genre" id="Classic" />
-									<label for="Classic">Classic</label>
-									<input type="radio" value="Periodical" name="genre" id="Periodical" />
-									<label for="Periodical">Periodical</label>
-									<input type="radio" value="Non-Fiction" name="genre" id="Non-Fiction" />
-									<label for="Non-Fiction">Non-Fiction</label>
-								</fieldset>
-							</div>
-							<!-- Select Favorite Checkbox -->
-							<div data-role="fieldcontain" class="formslider">
-								<label for="slider" class="blocklabel">Add to your favorites?</label>
-								<select data-role="slider" id="slider" data-inline="false" >
-									<option value="off">Not a favorite</option>
-									<option value="on">Added to favorites</option>
-								</select>
-							</div>
-							<!-- Notes Area -->
-							<div data-role="fieldcontain">
-								<label for="notes">Notes</label>
-								<textarea></textarea>
-							</div>
-							
+						<p class="banner">Add a Book</p>
+						<h6>or click here to go home</h6>
+					</div>
+				</a>
+			</div>
+			<!-- 'Add Item' Form -->
+			<div data-role="content" class="body results">
+				<!-- Start of the Form -->
+				<div>
+					<p id="notify">*required fields</p>
+					<form action="#addItem" method="post" id="addbookform">
+						<!-- Pick a Group / Type -->
+						<div data-role="fieldcontain">
+							<label for="groups">Media type</label>
+							<select name="groups" id="groups" data-native-menu="false" >
+								<option value="PickOne" data-placeholder="true">Pick one</option>
+								<option value="Book" class="option_btn" >Book</option>
+								<option value="EReader" class="option_btn" >E-Reader</option>
+								<option value="Tablet" class="option_btn" >Tablet</option>
+								<option value="Online" class="option_btn" >Online</option>
+							</select>
+						</div>
+						<!-- Enter the Title -->
+						<div data-role="fieldcontain">
+							<span>*<label for="booktitle" class="reqlabel">Title</label></span>
+							<input type="text" name="booktitle" id="booktitle" placeholder="The Great Gatsby" class="required" />
+						</div>
+						<!-- Enter the Author -->
+						<div data-role="fieldcontain">
+							<span>*<label for="author" class="reqlabel">Author</label></span>
+							<input type="text" name="author" id="author" placeholder="F. Scott Fitzgerald" class="required" />
+						</div>
+						<!-- Enter the Number of Pages -->
+						<div data-role="fieldcontain">
+							<span>*<label for="pages" class="reqlabel">Pages</label></span>
+							<input type="number" name="pages" id="pages" placeholder="180" class="required number" />
+						</div>
+						<!-- Enter the Finished-by Date -->
+						<div data-role="fieldcontain">
+							<label for="date">Date Finished</label>
+							<input type="date" name="date" id="date" placeholder="06/01/2012" data-role="datebox" data-options='{"mode": "calbox"}' />
+						</div>
+						<!-- Enter Range for Rating -->
+						<div data-role="fieldcontain">
+							<label for="rating" class="blocklabel">How fun was the book?</label>
+							<input type="range" name="rating" id="rating" value="5" min="0" max="10" />
+						</div>
+						<!-- Select Radio for Genre -->
+						<div data-role="fieldcontain">
+							<fieldset data-role="controlgroup" name="genre" id="genre">
+							<span>*<label for="genre" class="reqlabel">What was the genre?</label></span>
+								<legend>Genre</legend>
+								<input type="radio" value="Science-Fiction" name="genre" id="Science-Fiction" class="required" />
+								<label for="Science-Fiction">Science-Fiction</label>
+								<input type="radio" value="Fantasy" name="genre" id="Fantasy" />
+								<label for="Fantasy">Fantasy</label>
+								<input type="radio" value="Thriller" name="genre" id="Thriller" />
+								<label for="Thriller">Thriller</label>
+								<input type="radio" value="Classic" name="genre" id="Classic" />
+								<label for="Classic">Classic</label>
+								<input type="radio" value="Periodical" name="genre" id="Periodical" />
+								<label for="Periodical">Periodical</label>
+								<input type="radio" value="Non-Fiction" name="genre" id="Non-Fiction" />
+								<label for="Non-Fiction">Non-Fiction</label>
+							</fieldset>
+						</div>
+						<!-- Select Favorite Checkbox -->
+						<div data-role="fieldcontain" class="formslider">
+							<label for="favorite" class="blocklabel">Add to your favorites?</label>
+							<select data-role="slider" id="favorite" data-inline="false" >
+								<option value="off" selected="selected">Not a favorite</option>
+								<option value="on">Added to favorites</option>
+							</select>
+						</div>
+						<!-- Notes Area -->
+						<div data-role="fieldcontain">
+							<label for="notes">Notes</label>
+							<textarea id="notes"></textarea>
+						</div>
+						
+						<div id="formcontrols">
+							<!-- Submit Button -->
 							<div data-role="fieldcontain" id="fieldsubmit">
 								<input type="submit" value="Save your book" id="submit" data-theme="a"/>
 							</div>
+							
+							<!-- Reset Button (DOM) -->
 							<div data-role="fieldcontain" id="fieldreset">
-								<input type="reset" value="Reset the form" id="reset" />
+								<input type="reset" value="Reset the form" id="reset" class="reset" />
 							</div>
 							
-							<a href="#geterrors" id="errorslink" data-rel="dialog" data-transition="pop">Open Errors</a>
-						</form>
-					</div>
-				</div>
-				<!-- Footer -->
-				<div data-role="footer" data-id="footer" data-position="fixed" data-theme="d" data-tap-toggle="false" class="nav_footer" id="nav_footer_additem">
-					<div data-role="navbar" data-position="fixed" data-tap-toggle="false" class="navbar" id="navbar_additems">
-						<ul>
-							<li><a href="index.html" data-transition="slideup" data-direction="reverse">Home</a></li>
-							<li><a href="#reset" >Clear Form</a></li>
-							<li><a href="#view" data-transition="slideup">View All</a></li>
-						</ul>
-					</div>
+						</div>
+						<!-- Hidden Event Links -->
+						<a href="#geterrors" id="errorslink" data-rel="dialog" data-transition="none">Open Errors Dialog</a>
+						<a href="#allclear" id="clearall" data-rel="dialog" data-transition="none">Form Reset Dialog</a>
+					</form>
 				</div>
 			</div>
-			<!-- Form Validation Pop-up -->
-			<div data-role="dialog" id="geterrors">
-			
-				<div data-role="header" data-position="fixed">
-					<h1>Something's Missing!</h1>
-				</div>
-						
-				<div data-role="content">
+			<!-- Footer -->
+			<div data-role="footer" data-id="footer" data-position="fixed" data-theme="d" data-tap-toggle="false" class="nav_footer" id="nav_footer_additem">
+				<div data-role="navbar" data-position="fixed" data-tap-toggle="false" class="navbar" id="navbar_additems">
 					<ul>
-						<li>This will be replaced on actual validation.</li>
+						<li><a href="index.html" data-transition="slideup" data-direction="reverse">Home</a></li>
+						<li><a href="#" class="reset">Clear Form</a></li>
+						<li><a href="allitems.html" class="viewall" data-transition="slide">View All</a></li>
 					</ul>
-					<a href="#addItem" data-role="button" data-mini="true">Ok, I'll fix it!</a>
 				</div>
+			</div>
+		</div>
+		<!-- Form Validation Pop-up -->
+		<div data-role="dialog" id="geterrors" class="userdialog">
+		
+			<div data-role="header" data-position="fixed">
+				<h1>Something's Missing!</h1>
+			</div>
+					
+			<div data-role="content">
+				<ul>
+					<li>This will be replaced on actual validation.</li>
+				</ul>
+				<a href="#addItem" data-role="button" data-mini="true">Ok, I'll fix it!</a>
+			</div>
+		</div>
+		<!-- Reset Completed Pop-up -->
+		<div data-role="dialog" id="allclear" class="userdialog">
+		
+			<div data-role="header" data-position="fixed">
+				<h1>All clear!</h1>
+			</div>
+			
+			<div data-role="content">
+				<p>The form has been reset</p>
+				<a href="#addItem" data-role="button" data-mini="true">Ok!</a>
 			</div>
 		</div>
 		<!-- JavaScript Links -->
